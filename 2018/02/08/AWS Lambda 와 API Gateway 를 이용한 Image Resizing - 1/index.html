@@ -122,7 +122,10 @@
 </li>
 <li><p>다시 원래화면으로 돌아오면 1번 화살표에 ‘lambda_basic_execution’ 을 선택하고 2번 화살표에 따라 함수생성을 눌러 완료합니다.<img src="https://raw.githubusercontent.com/hyeonu1258/hyeonu1258.github.io/master/images/lambda_tutorial_4.png" alt="lambda_tutorial_4"></p>
 </li>
-<li><p>1번 화살표처럼 ‘코드 인라인 편집’ 을 통해 직접 코드를 입력하여 편집하거나 2번 화살표가 가리키는 ‘.ZIP 파일 업로드’ 를 통해 파일을 통째로 올리는 방식을 통해서 실행시킬 함수를 구현합니다. 저 같은 경우 이상하게 ‘Loading your function’ 만 떠서 로컬에서 작업한 코드를 npm install 까지 마친후 node module 과 package.json, js 파일을 [^압축]하여 업로드하였습니다.</p>
+<li><p>1번 화살표처럼 ‘코드 인라인 편집’ 을 통해 직접 코드를 입력하여 편집하거나 2번 화살표가 가리키는 ‘.ZIP 파일 업로드’ 를 통해 파일을 통째로 올리는 방식을 통해서 실행시킬 함수를 구현합니다. 저 같은 경우 이상하게 ‘Loading your function’ 만 떠서 로컬에서 작업한 코드를 npm install 까지 마친후 node module 과 package.json, js 파일을 <strong>*압축</strong>하여 업로드하였습니다.</p>
+<blockquote>
+<p>맥에서 파일을 압축시 불안정하게 압축이 되어 Lambda 실행이 잘 안될수 있습니다. (Error: Cannot find module ‘/var/task/index) 따라서 압축을 할때에는 터미널을 통해 압축하고자하는 파일경로로 들어가 ‘zip -r ../yourfilename.zip *’ 명령어를 사용하여 압축하면 해결가능합니다.</p>
+</blockquote>
 <p><img src="https://raw.githubusercontent.com/hyeonu1258/hyeonu1258.github.io/master/images/lambda_tutorial_5.png" alt="lambda_tutorial_5"></p>
 </li>
 <li><p>아래로 스크롤 하다보면 ‘실행 역할’ 과 ‘기본 설정’ 이 보입니다. 기본 설정에서 시간은 30초 정도로 설정해주고(제가 알기론 Lambda 가 최대 30초까지 지원한다고 합니다.) 그다음 실행 역할을 설정해주어야 합니다. 실행 역할이란 Lambda 에 IAM 역할을 설정해주는 것인데 권한을 부여한다고 생각하시면 됩니다. 앞으로 연동할 S3에 접근 가능한 권한, Gateway에 접근할수 있는 권한을 부여하는 것입니다. 권한은 접근하고자 하는 플랫폼에만 권한을 줄 수 있지만, 우리는 예제이기에 모든 권한을 부여하도록 하겠습니다.<img src="https://raw.githubusercontent.com/hyeonu1258/hyeonu1258.github.io/master/images/lambda_tutorial_6.png" alt="lambda_tutorial_6"></p>
@@ -154,7 +157,6 @@
 <li><p>S3 를 추가하였으면 ‘저장’ 을 눌러 모든 설정을 마칩니다. 이제 S3 와 Lambda 의 설정을 마쳤으니 S3 의 메인 bucket 으로 가서 용량이 어느정도 큰 이미리를 로드시켜 테스트를 해봅시다. 서브 bucket 에 resizing 된 thumbnail image 가 자동 생성된다면 Lambda 기능구현을 완성하게 됩니다.<img src="https://raw.githubusercontent.com/hyeonu1258/hyeonu1258.github.io/master/images/lambda_tutorial_20.png" alt="lambda_tutorial_20"></p>
 </li>
 </ol>
-<p>[^압축]: 맥에서 파일을 압축시 불안정하게 압축이 되어 Lambda 실행이 잘 안될수 있습니다. (Error: Cannot find module ‘/var/task/index) 따라서 압축을 할때에는 터미널을 통해 압축하고자하는 파일경로로 들어가 ‘zip -r ../yourfilename.zip *’ 명령어를 사용하여 압축하면 해결가능합니다.</p>
 </section>
     
     <div class="money-like">
