@@ -7,7 +7,7 @@
   <meta name="keyword" content="android, java, kotlin">
   <title>
     
-      About | 현우의 개발노트
+      현우의 개발노트
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -104,32 +104,56 @@
   </div>
 </header>
 
-    <div id="about-banner" style="background-image: url(http://file.muyutech.com/about.jpg)"></div>
-<div class="author">
-  <div class="head">
-    <img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-1/p320x320/14184430_1106017076156894_6010418797906360041_n.jpg?oh=8a7a8da587eec08468d4857b27753dfe&oe=5A0C20D5" />
-  </div>
-  <h3>Hyeonu, Ryu</h3>
-  <p class="discription">The end is always near.</p>
-  <section class="share-icons">
-    
-    
-    
-    
-  </section>
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">文章归档</p>
 </div>
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/02/09/AWS Lambda 와 API Gateway 를 이용한 Image Resizing - 1/" class="archive-title">[object Object]</a>
+        <p class="archive-date">02-09</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2017
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2017/07/26/test2/" class="archive-title">시험 포스팅</a>
+        <p class="archive-date">07-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/07/25/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">07-25</p>
+      </div>
+    
+  </div>
+</section>
+  
+</main>
 
 <script>
   (function () {
-    $('.header').removeClass('fixed-header')
-    var windowH = $(window).height();
-    var author = $('.author')
-    var bodyH = author.offset().top + author[0].offsetHeight + 71;
-    if (bodyH < windowH) {
-      author.css({
-        'margin-bottom': windowH - bodyH
-      })
-    }
+    var url = 'https://hyeonu1258.github.io/archives/2018/02/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
   })();
 </script>
     <div class="scroll-top">
