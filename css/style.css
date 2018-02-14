@@ -198,8 +198,8 @@ h2.article-head {
   top: -7em;
   left: 50%;
   display: none;
-  width: 10.5em;
-  height: 5.5em;
+  width: 12em;
+  height: 12em;
   margin-left: -5.9em;
   padding: 10px 15px;
   background: #fff;
@@ -208,8 +208,8 @@ h2.article-head {
 }
 .money-like .money-code span {
   display: inline-block;
-  width: 5.5em;
-  height: 8em;
+  width: 4.5em;
+  height: 4.5em;
 }
 .money-like .money-code .alipay-code {
   float: left;
@@ -238,8 +238,8 @@ h2.article-head {
   background-image: url("images/kakaopay.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 4.5em;
-  height: 4.5em;
+  width: 6em;
+  height: 9em;
 }
 .money-like .money-code b {
   font-size: 0.5em;
