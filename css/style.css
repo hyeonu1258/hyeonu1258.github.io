@@ -208,8 +208,8 @@ h2.article-head {
 }
 .money-like .money-code span {
   display: inline-block;
-  width: 4.5em;
-  height: 4.5em;
+  width: 5.5em;
+  height: 8em;
 }
 .money-like .money-code .alipay-code {
   float: left;
