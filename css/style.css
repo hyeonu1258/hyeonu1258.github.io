@@ -195,13 +195,14 @@ h2.article-head {
 }
 .money-like .money-code {
   position: absolute;
-/* top: -7em */
+  top: -10em;
   left: 50%;
   display: none;
-/* width: 10.5em
-    height: 5.5em */
-  margin-left: -5.9em;
-  margin-top: -5.9em;
+/* top: -7em
+    width: 10.5em
+    height: 5.5em 
+    margin-left: -5.9em */
+  margin-left: -4em;
   width: 7em;
   height: 10em;
   padding: 10px 15px;
