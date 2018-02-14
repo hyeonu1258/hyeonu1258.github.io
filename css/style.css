@@ -198,9 +198,11 @@ h2.article-head {
   top: -7em;
   left: 50%;
   display: none;
-  width: 12em;
-  height: 12em;
-  margin-left: -5.9em;
+/* width: 10.5em
+    height: 5.5em
+    margin-left: -5.9em */
+  width: 7em;
+  height: 10em;
   padding: 10px 15px;
   background: #fff;
   box-shadow: 0 0 0 1px #e5e5e5;
