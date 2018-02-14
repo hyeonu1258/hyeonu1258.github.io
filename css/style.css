@@ -200,6 +200,7 @@ h2.article-head {
   display: none;
 /* width: 10.5em
     height: 5.5em */
+  margin-left: -5.9em;
   width: 7em;
   height: 10em;
   padding: 10px 15px;
@@ -233,7 +234,7 @@ h2.article-head {
   height: 4.5em;
 }
 .money-like .money-code .kakaopay-code {
-  float: center;
+  float: top;
 }
 .money-like .money-code .kakaopay-code .code-image {
   background-image: url("images/kakaopay.jpg");
