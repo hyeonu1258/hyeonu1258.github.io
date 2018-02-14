@@ -231,6 +231,16 @@ h2.article-head {
   width: 4.5em;
   height: 4.5em;
 }
+.money-like .money-code .kakaopay-code {
+  float: center;
+}
+.money-like .money-code .kakaopay-code .code-image {
+  background-image: url("images/kakaopay.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4.5em;
+  height: 4.5em;
+}
 .money-like .money-code b {
   font-size: 0.5em;
   line-height: 24px;
