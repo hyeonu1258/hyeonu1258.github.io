@@ -205,10 +205,10 @@ h2.article-head {
     height: 5.5em */
   width: 6em;
   height: 10em;
-  padding: 10px 15px;
-  background: #fff;
-  box-shadow: 0 0 0 1px #e5e5e5;
-  border-radius: 8px;
+/* padding: 10px 15px
+    background: color-white
+    box-shadow: 0 0 0 1px color-border
+    border-radius: 8px */
 }
 .money-like .money-code span {
   display: inline-block;
