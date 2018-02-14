@@ -201,12 +201,13 @@ h2.article-head {
 /* width: 10.5em
     height: 5.5em */
   margin-left: -5.9em;
+  margin-top: -5.9em;
   width: 7em;
   height: 10em;
   padding: 10px 15px;
   background: #fff;
   box-shadow: 0 0 0 1px #e5e5e5;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 .money-like .money-code span {
   display: inline-block;
