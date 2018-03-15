@@ -5,6 +5,9 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="Hyeonu&#39;s blog">
   <meta name="keyword" content="android, java, kotlin">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
   <title>
     
       네트워크통신 면접 | 현우의 개발노트
@@ -20,7 +23,37 @@
   <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
   <script src="/js/qrious.js"></script>
 <script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
 </head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
   <body>
     <header class="header fixed-header">
   <div class="header-container">
@@ -111,7 +144,8 @@
     <a href="javascript:;"></a>
   </div>
 </div>
-<main class="app-body">
+<main class="app-body flex-box">
+  <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><h4 id="OSI-7계층"><a href="#OSI-7계층" class="headerlink" title="OSI 7계층"></a>OSI 7계층</h4><p>국제표준화 기구(ISO)에서 개발한 모델로서 네트워크 프로토콜 통신을 계층으로 나눔으로서 표준화와 모듈화를 통해 프로그래머가 하위 수준의 단계에 크게 신경 쓰지 않고 개발을 할 수 있으며, 계층별 독립성과 단계적 계층 때문에 오류 처리가 수월하다는 장점이 있습니다. 1층은 물리계층, 2층은 데이터링크 계층, 3층은 네트워크 계층, 4층은 전송 계층, 5층은 세션 계층, 6층은 표현 계층, 7층은 응용계층이로 나누어져 있다.</p>
 <h5 id="물리계층"><a href="#물리계층" class="headerlink" title="물리계층"></a>물리계층</h5><p>통신케이블을 통해 데이터를 전송하는 계층입니다. 통신 단위는 bit 이며 데이터를 전송하기만 할뿐 무슨 데이터인지는 신경을 쓰지 않습니다.</p>
@@ -335,6 +369,7 @@
 <p><img src="http://cfile27.uf.tistory.com/attach/2638BF4652B999BF17DB20" alt="udp header"></p>
 <h4 id="애플리케이션에서-사용하는-프로토콜의-종류-3가지"><a href="#애플리케이션에서-사용하는-프로토콜의-종류-3가지" class="headerlink" title="애플리케이션에서 사용하는 프로토콜의 종류 3가지"></a>애플리케이션에서 사용하는 프로토콜의 종류 3가지</h4><p>HTTP, SMTP, FTP, DHCP</p>
 <h4 id="브라우저에-URL을-치면-어떤-과정을-거쳐서-어떤-일이-발생하는지-네트워크-통신의-전반적인-흐름을-설명"><a href="#브라우저에-URL을-치면-어떤-과정을-거쳐서-어떤-일이-발생하는지-네트워크-통신의-전반적인-흐름을-설명" class="headerlink" title="브라우저에 URL을 치면 어떤 과정을 거쳐서 어떤 일이 발생하는지 네트워크 통신의 전반적인 흐름을 설명 ?"></a>브라우저에 URL을 치면 어떤 과정을 거쳐서 어떤 일이 발생하는지 네트워크 통신의 전반적인 흐름을 설명 ?</h4><h4 id="서브넷-마스크-사용하여-A-B-C-D-class-쪼개는-법-NHN엔터에-나온-문제"><a href="#서브넷-마스크-사용하여-A-B-C-D-class-쪼개는-법-NHN엔터에-나온-문제" class="headerlink" title="서브넷 마스크 사용하여 A, B, C, D class 쪼개는 법 ? (NHN엔터에 나온 문제)"></a>서브넷 마스크 사용하여 A, B, C, D class 쪼개는 법 ? (NHN엔터에 나온 문제)</h4></section>
+    <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
@@ -345,61 +380,112 @@
 
       </div>
     
-    <div class="money-like">
-      <div class="reward-btn">
-        후원
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/03/10/StringBuilder_setCharAt_replace/">
+        <span class="nav-arrow">← </span>
+        
+          StringBuilder 의 setCharAt(int i, char c) 과 replace(int start, int end, String str) 속도 비교
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/03/15/데이터베이스 면접/">
+        
+          데이터베이스 면접
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          후원
         <span class="money-code">
           <span class="kakaopay-code">
             <div class="code-image"></div>
           </span>
         </span>
-      </div>
+        </div>
       <p class="notice">이 포스트가 도움이 되었다고 생각하시면, 위의 버튼을 클릭하여 후원해주세요.</p>
-    </div>
-    <div class="qrcode">
-      <canvas id="share-qrcode"></canvas>
+      </div>
+    
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
       <p class="notice">이 포스트를 공유하려면 QR 코드를 스캔하세요.</p>
-    </div>
+      </div>
+    
     
       <div id="comments"></div>
+      <!-- Gitment END -->
     
   </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#OSI-7계층"><span class="toc-nav-text">OSI 7계층</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#물리계층"><span class="toc-nav-text">물리계층</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#데이터링크계층"><span class="toc-nav-text">데이터링크계층</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#네트워크-계층"><span class="toc-nav-text">네트워크 계층</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#전송-계층"><span class="toc-nav-text">전송 계층</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#세션-계층"><span class="toc-nav-text">세션 계층</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#표현계층이란"><span class="toc-nav-text">표현계층이란</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#어플리케이션-계층"><span class="toc-nav-text">어플리케이션 계층</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Big-endian-Little-endian"><span class="toc-nav-text">Big endian, Little endian</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Big-endian-Little-endian-장단점"><span class="toc-nav-text">Big endian. Little endian 장단점</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-way-handshaking"><span class="toc-nav-text">3-way handshaking</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3-way-handshaking이-어떻게-신뢰성을-제공하는가"><span class="toc-nav-text">3-way handshaking이 어떻게 신뢰성을 제공하는가</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3-wau-handshaking-과정"><span class="toc-nav-text">3-wau handshaking 과정</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-way-handshaking"><span class="toc-nav-text">4-way handshaking</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#4-way-handshaking-과정"><span class="toc-nav-text">4-way handshaking 과정</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#서버가-마지막에-FIN-을-보내는-이유"><span class="toc-nav-text">서버가 마지막에 FIN 을 보내는 이유</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#클라이언트가-마지막에-ACK-를-굳이-보내는-이유"><span class="toc-nav-text">클라이언트가 마지막에 ACK 를 굳이 보내는 이유</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#로드밸런싱-Load-balancing"><span class="toc-nav-text">로드밸런싱(Load balancing)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#분산처리를-어떻게-하는가"><span class="toc-nav-text">분산처리를 어떻게 하는가</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Round-Robin"><span class="toc-nav-text">Round Robin</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Least-Connextion"><span class="toc-nav-text">Least Connextion</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Weighted-Least-Connections"><span class="toc-nav-text">Weighted Least Connections</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Response-Time"><span class="toc-nav-text">Response Time</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Hash"><span class="toc-nav-text">Hash</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#도메인-domain"><span class="toc-nav-text">도메인(domain)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#IP-Address와-MAC-Address"><span class="toc-nav-text">IP Address와 MAC Address</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ARP-Address-Resolution-Protocol-와-RARP에-대해-설명"><span class="toc-nav-text">ARP (Address Resolution Protocol) 와 RARP에 대해 설명</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#리피터-허브-브릿지-라우터와-L2-L3-L4-L7-스위치-차이점"><span class="toc-nav-text">리피터, 허브, 브릿지, 라우터와 L2, L3, L4, L7 스위치 차이점</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#리피터"><span class="toc-nav-text">리피터</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#허브"><span class="toc-nav-text">허브</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#플러딩"><span class="toc-nav-text">플러딩</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#허브와-리피터의-차이"><span class="toc-nav-text">허브와 리피터의 차이</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#브릿지"><span class="toc-nav-text">브릿지</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#스위치"><span class="toc-nav-text">스위치</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#브릿지와-스위치의-차이"><span class="toc-nav-text">브릿지와 스위치의 차이</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#스위치가-속도가-더-빠른-이유"><span class="toc-nav-text">스위치가 속도가 더 빠른 이유</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#L3-스위치"><span class="toc-nav-text">L3 스위치</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#L4-L7-차이점"><span class="toc-nav-text">L4, L7 차이점</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#라우터란"><span class="toc-nav-text">라우터란</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#게이트웨이-Gateway-란"><span class="toc-nav-text">게이트웨이(Gateway)란?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#프로토콜-Protocol"><span class="toc-nav-text">프로토콜(Protocol)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTP-프로토콜"><span class="toc-nav-text">HTTP 프로토콜</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTP-1-1-에서-추가된-기능"><span class="toc-nav-text">HTTP 1.1 에서 추가된 기능</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTP-2-0-에서-추가된-기능"><span class="toc-nav-text">HTTP 2.0 에서 추가된 기능</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Keepalive"><span class="toc-nav-text">Keepalive</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TCP에서-Keepalive"><span class="toc-nav-text">TCP에서 Keepalive</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTP에서의-Keepalive"><span class="toc-nav-text">HTTP에서의 Keepalive</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#POST-방식과-GET-방식"><span class="toc-nav-text">POST 방식과 GET 방식</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#GET-method"><span class="toc-nav-text">GET method</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#POST-medthod"><span class="toc-nav-text">POST medthod</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Restfult-API에서의-URL과-일반적인-HTTP-에서의-URL의-차이"><span class="toc-nav-text">Restfult API에서의 URL과 일반적인 HTTP 에서의 URL의 차이</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Restful-API"><span class="toc-nav-text">Restful API</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Get-방식-그-어떤-방식이든간에-의-URL을-통해서-데이터를-전달시-보안성-취약-해결방법"><span class="toc-nav-text">Get 방식(그 어떤 방식이든간에)의 URL을 통해서 데이터를 전달시 보안성 취약 해결방법</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HTTPS"><span class="toc-nav-text">HTTPS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTPS-동작-방식"><span class="toc-nav-text">HTTPS 동작 방식</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SSL에-대해-설명해보아라"><span class="toc-nav-text">SSL에 대해 설명해보아라.</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#SSL-디지털-인증서"><span class="toc-nav-text">SSL 디지털 인증서</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#대칭키"><span class="toc-nav-text">대칭키</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#공개키"><span class="toc-nav-text">공개키</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#SSL의-동작-방법"><span class="toc-nav-text">SSL의 동작 방법</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#SSL의-사용-예"><span class="toc-nav-text">SSL의 사용 예</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TCP와-UDP"><span class="toc-nav-text">TCP와 UDP</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#UDP"><span class="toc-nav-text">UDP</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TCP"><span class="toc-nav-text">TCP</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TCP-의-신뢰성-보장이-어떻게-이루어지는가"><span class="toc-nav-text">TCP 의 신뢰성 보장이 어떻게 이루어지는가</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#흐름-제어-control-flow"><span class="toc-nav-text">흐름 제어 (control flow)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Stop-and-Wait-ARQ"><span class="toc-nav-text">Stop and Wait ARQ</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Sliding-Window"><span class="toc-nav-text">Sliding Window</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Window"><span class="toc-nav-text">Window</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Go-Back-N-ARQ"><span class="toc-nav-text">Go-Back-N ARQ</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Selective-Repeat-ARQ"><span class="toc-nav-text">Selective Repeat ARQ</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#혼잡제어-congestion-control"><span class="toc-nav-text">혼잡제어 (congestion control)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#AIME-Additive-Increase-Multiplicative-Decrease"><span class="toc-nav-text">AIME (Additive Increase/Multiplicative Decrease)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Slow-Start"><span class="toc-nav-text">Slow Start</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Fast-Retransmit"><span class="toc-nav-text">Fast Retransmit</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Fast-Recovery"><span class="toc-nav-text">Fast Recovery</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Java에서-TCP와-UDP-소켓-생성-방법"><span class="toc-nav-text">Java에서 TCP와 UDP 소켓 생성 방법</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TCP-소켓-생성방법"><span class="toc-nav-text">TCP 소켓 생성방법</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-클라이언트"><span class="toc-nav-text">1. 클라이언트</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-서버"><span class="toc-nav-text">2. 서버</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#UDP-소켓-생성방법"><span class="toc-nav-text">UDP 소켓 생성방법</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-송신자"><span class="toc-nav-text">1. 송신자</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-수신자"><span class="toc-nav-text">2. 수신자</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-1"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TCP와-UDP-패킷-구조의-차이"><span class="toc-nav-text">TCP와 UDP 패킷 구조의 차이 ?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TCP-패킷구조"><span class="toc-nav-text">TCP 패킷구조</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#UDP-패킷구조"><span class="toc-nav-text">UDP 패킷구조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#애플리케이션에서-사용하는-프로토콜의-종류-3가지"><span class="toc-nav-text">애플리케이션에서 사용하는 프로토콜의 종류 3가지</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#브라우저에-URL을-치면-어떤-과정을-거쳐서-어떤-일이-발생하는지-네트워크-통신의-전반적인-흐름을-설명"><span class="toc-nav-text">브라우저에 URL을 치면 어떤 과정을 거쳐서 어떤 일이 발생하는지 네트워크 통신의 전반적인 흐름을 설명 ?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#서브넷-마스크-사용하여-A-B-C-D-class-쪼개는-법-NHN엔터에-나온-문제"><span class="toc-nav-text">서브넷 마스크 사용하여 A, B, C, D class 쪼개는 법 ? (NHN엔터에 나온 문제)</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
     var url = 'https://hyeonu1258.github.io/2018/03/10/네트워크통신 면접/';
-    $('#article-banner').geopattern(url)
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
     $('.header').removeClass('fixed-header')
 
      // error image
     $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
     })
 
     // zoom image
     $(".markdown-content img").on('click', function() {
       var src = $(this).attr('src')
-      var imageW = $(this).width()
-      var imageH = $(this).height()
-      
-      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-      zoom = zoom < 1 ? 1 : zoom
-      zoom = zoom > 2 ? 2 : zoom
-      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
 
-      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-      $('.image-view-wrap').addClass('wrap-active')
-      $('.image-view-wrap img').css({
-        'width': `${imageW}`,
-        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-      })
-      $('html').css('overflow', 'hidden')
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
 
-      $('.image-view-wrap').on('click', function() {
-        $(this).remove()
-        $('html').attr('style', '')
-      })
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
     })
 
     // qrcode
@@ -410,7 +496,7 @@
 
     // gitment
     var gitmentConfig = "hyeonu1258";
-    if (gitmentConfig != "undefined") {
+    if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
         id: "네트워크통신 면접",
         owner: "hyeonu1258",
@@ -469,7 +555,7 @@
   async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
-      if (hasLine == 'false') {
+      if (hasLine === 'false') {
         figure.find('.gutter').hide();
       }
       var lang = figure.attr('class').split(' ')[1] || 'code';

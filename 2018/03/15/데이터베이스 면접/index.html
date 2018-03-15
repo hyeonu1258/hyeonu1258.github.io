@@ -5,6 +5,9 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="Hyeonu&#39;s blog">
   <meta name="keyword" content="android, java, kotlin">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
   <title>
     
       데이터베이스 면접 | 현우의 개발노트
@@ -20,7 +23,37 @@
   <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
   <script src="/js/qrious.js"></script>
 <script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
 </head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
   <body>
     <header class="header fixed-header">
   <div class="header-container">
@@ -111,7 +144,8 @@
     <a href="javascript:;"></a>
   </div>
 </div>
-<main class="app-body">
+<main class="app-body flex-box">
+  <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><h4 id="키-key-의-종류와-개념-설명"><a href="#키-key-의-종류와-개념-설명" class="headerlink" title="키(key)의 종류와 개념 설명"></a>키(key)의 종류와 개념 설명</h4><p>키는 테이블에서 행들을 구별할 수 있는 속성 또는 속성들의 집합을 말합니다. 특징으로 모든 행에서 유일값을 가져야하는 유일성, 최소한의 속성들로만 키를 구성하는 최소성이 있습니다. 대표적으로 슈퍼키, 후보키, 기본키, 대체키, 외래키가 있습니다.</p>
 <h5 id="슈퍼키"><a href="#슈퍼키" class="headerlink" title="슈퍼키"></a>슈퍼키</h5><p>유일성을 만족하는 키, 즉 고유하게 식별하는 모든 조합을 슈퍼키라고 합니다.</p>
@@ -227,6 +261,7 @@
 <h4 id="Replication"><a href="#Replication" class="headerlink" title="Replication"></a>Replication</h4><p>리플리케이션이란 데이터베이스를 접근하는 DB서버와 데이터를 저장하는 저장소를 구성하는 하나의 세트를 복제하여 여러 세트로 구성함으로써 위험을 분산하는 구조를 말합니다. 이러한 구조를 저장소를 공유한다 하여 shared disk라고 부릅니다. 분산처리를 통해 성능 향상을 기대할 수 있는 장점이 있는 반면, 여러 데이터가 복제되어 있는 만큼 데이터의 정합성을 유지하기 어렵습니다. 따라서 갱신 주기를 어떻게 하느냐가 중요한데 이것은 성능과 데이터의 정합성에 트레이드오프 관계가 발생하는 단점이 있습니다.</p>
 <h4 id="Sharding"><a href="#Sharding" class="headerlink" title="Sharding"></a>Sharding</h4><p>데이터의 정합성 문제와 갱신에 의한 성능 저하가 발생하는 shared disk의 문제를 해결하기 위해 고안된 아키텍쳐가 shared nothing이며 이 개념에 기반하여 구글에서 만든 구조가 sharding 입니다. sharding은 데이터를 여러 저장소에 분할 저장함으로써 동기화에 대한 이슈를 제거했기에 속도 또한 빠릅니다. 분할된 구조를 통해 병합 문제를 해결하였습니다. 하지만 특정 저장소에 정해진 데이터가 저장되어있기에 데이터를 찾으려면 특정 저장소를 찾아가야한다는 문제점이 있으며, 하나의 DB 서버가 다운이 되면 복구할 수가 없다는 문제가 있습니다. 이러한 문제는 커버링이라는 구성을 통해 하나의 DB 서버가 다운되었을 때 그것을 이어받아 처리하는 조치가 필요합니다.</p>
 </section>
+    <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
@@ -237,61 +272,105 @@
 
       </div>
     
-    <div class="money-like">
-      <div class="reward-btn">
-        후원
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/03/10/네트워크통신 면접/">
+        <span class="nav-arrow">← </span>
+        
+          네트워크통신 면접
+        
+      </a>
+    
+    
+  </div>
+
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          후원
         <span class="money-code">
           <span class="kakaopay-code">
             <div class="code-image"></div>
           </span>
         </span>
-      </div>
+        </div>
       <p class="notice">이 포스트가 도움이 되었다고 생각하시면, 위의 버튼을 클릭하여 후원해주세요.</p>
-    </div>
-    <div class="qrcode">
-      <canvas id="share-qrcode"></canvas>
+      </div>
+    
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
       <p class="notice">이 포스트를 공유하려면 QR 코드를 스캔하세요.</p>
-    </div>
+      </div>
+    
     
       <div id="comments"></div>
+      <!-- Gitment END -->
     
   </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#키-key-의-종류와-개념-설명"><span class="toc-nav-text">키(key)의 종류와 개념 설명</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#슈퍼키"><span class="toc-nav-text">슈퍼키</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#후보키"><span class="toc-nav-text">후보키</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#슈퍼키와-후보키의-차이점"><span class="toc-nav-text">슈퍼키와 후보키의 차이점</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#기본키"><span class="toc-nav-text">기본키</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#대체키"><span class="toc-nav-text">대체키</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#외래키"><span class="toc-nav-text">외래키</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#데이터베이스-무결성에-대하여-설명"><span class="toc-nav-text">데이터베이스 무결성에 대하여 설명</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#엔티티-무결성"><span class="toc-nav-text">엔티티 무결성</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-무결성"><span class="toc-nav-text">참조 무결성</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#도메인-무결성"><span class="toc-nav-text">도메인 무결성</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#데이터베이스-정규화-설명-왜하고-어떻게-하는지-그리고-역정규화는-무엇인지-왜하는지"><span class="toc-nav-text">데이터베이스 정규화 설명, 왜하고 어떻게 하는지, 그리고 역정규화는 무엇인지, 왜하는지</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#제-1-정규형"><span class="toc-nav-text">제 1 정규형</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#제-2-정규형"><span class="toc-nav-text">제 2 정규형</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#부분함수-종속이-안-좋은-이유-or-제-2-정규형이-필요한-이유"><span class="toc-nav-text">부분함수 종속이 안 좋은 이유 ? or 제 2 정규형이 필요한 이유</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#제-3-정규형"><span class="toc-nav-text">제 3 정규형</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#추이함수-종속이-안-좋은-이유-or-제-3-정규형이-필요한-이유"><span class="toc-nav-text">추이함수 종속이 안 좋은 이유 ? or 제 3 정규형이 필요한 이유</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#역정규화란"><span class="toc-nav-text">역정규화란</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#데이터베이스-이상"><span class="toc-nav-text">데이터베이스 이상</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#삽입-이상"><span class="toc-nav-text">삽입 이상</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#삭제-이상"><span class="toc-nav-text">삭제 이상</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#갱신-이상"><span class="toc-nav-text">갱신 이상</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#데이터베이스-트랜잭션에-대하여-설명-ACID에-대해-설명"><span class="toc-nav-text">데이터베이스 트랜잭션에 대하여 설명, ACID에 대해 설명</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Atomicity"><span class="toc-nav-text">Atomicity</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Consistency"><span class="toc-nav-text">Consistency</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Isolation"><span class="toc-nav-text">Isolation</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#격리수준"><span class="toc-nav-text">격리수준</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#격리수준에-따른-문제점"><span class="toc-nav-text">격리수준에 따른 문제점</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-1"><span class="toc-nav-text">참조</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Durability"><span class="toc-nav-text">Durability</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#NoSQL과-RDBMS가-뭔지-설명"><span class="toc-nav-text">NoSQL과 RDBMS가 뭔지 설명</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#RDBMS"><span class="toc-nav-text">RDBMS</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#NoSQL"><span class="toc-nav-text">NoSQL</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-2"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Data-Independency"><span class="toc-nav-text">Data Independency</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#논리적-데이터-독립성"><span class="toc-nav-text">논리적 데이터 독립성</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#물리적-데이터-독립성"><span class="toc-nav-text">물리적 데이터 독립성</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-3"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Trigger의-역할"><span class="toc-nav-text">Trigger의 역할</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-4"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Join의-종류에-대해-아는대로-설명"><span class="toc-nav-text">Join의 종류에 대해 아는대로 설명</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#내부-조인"><span class="toc-nav-text">내부 조인</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#외부-조인"><span class="toc-nav-text">외부 조인</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Index-개념-쓰는-이유와-장단점"><span class="toc-nav-text">Index 개념, 쓰는 이유와 장단점</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#장점"><span class="toc-nav-text">장점</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#단점"><span class="toc-nav-text">단점</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#인덱스를-사용해야-될-때"><span class="toc-nav-text">인덱스를 사용해야 될 때</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#인덱스-구조"><span class="toc-nav-text">인덱스 구조</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#B-Tree"><span class="toc-nav-text">B-Tree</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-5"><span class="toc-nav-text">참조</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#B-Tree-1"><span class="toc-nav-text">B+Tree</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Balanced-Tree"><span class="toc-nav-text">Balanced-Tree</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조-6"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Replication"><span class="toc-nav-text">Replication</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Sharding"><span class="toc-nav-text">Sharding</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
     var url = 'https://hyeonu1258.github.io/2018/03/15/데이터베이스 면접/';
-    $('#article-banner').geopattern(url)
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
     $('.header').removeClass('fixed-header')
 
      // error image
     $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
     })
 
     // zoom image
     $(".markdown-content img").on('click', function() {
       var src = $(this).attr('src')
-      var imageW = $(this).width()
-      var imageH = $(this).height()
-      
-      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-      zoom = zoom < 1 ? 1 : zoom
-      zoom = zoom > 2 ? 2 : zoom
-      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
 
-      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-      $('.image-view-wrap').addClass('wrap-active')
-      $('.image-view-wrap img').css({
-        'width': `${imageW}`,
-        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-      })
-      $('html').css('overflow', 'hidden')
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
 
-      $('.image-view-wrap').on('click', function() {
-        $(this).remove()
-        $('html').attr('style', '')
-      })
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
     })
 
     // qrcode
@@ -302,7 +381,7 @@
 
     // gitment
     var gitmentConfig = "hyeonu1258";
-    if (gitmentConfig != "undefined") {
+    if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
         id: "데이터베이스 면접",
         owner: "hyeonu1258",
@@ -361,7 +440,7 @@
   async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
-      if (hasLine == 'false') {
+      if (hasLine === 'false') {
         figure.find('.gutter').hide();
       }
       var lang = figure.attr('class').split(' ')[1] || 'code';
