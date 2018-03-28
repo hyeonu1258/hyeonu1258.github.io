@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Hyeonu&#39;s blog">
+  <meta name="keyword" content="android, java, kotlin">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      안드로이드 면접2 | 현우의 개발노트
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>현우의 개발노트</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>안드로이드 면접2</h2>
+  <p class="post-date">2018-03-28</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h4 id="Java-메모리구조-Heap-Data-Stack"><a href="#Java-메모리구조-Heap-Data-Stack" class="headerlink" title="Java 메모리구조 Heap, Data, Stack"></a>Java 메모리구조 Heap, Data, Stack</h4><p><em>Java</em> 는 <em>Java</em> 코드를 컴파일러를 통해 바이트코드로 변환시킨 뒤 <em>JVM</em> 위에 실행시키는 구조이다. <em>JVM</em>은 자바 바이트코드를 실행시키는 가상머신으로서 자바가 플랫폼에 독립적으로 실행될 수 있게 한다. <em>JVM</em> 구조에는 <em>Class Loader</em>, <em>Execution Engine</em>, <em>Garbage Collector</em>, <em>Runtime Data Areas</em> 가 있다.</p>
+<p><img src="http://cfile25.uf.tistory.com/image/2540294C5654207F26E12E" alt="JVM 구조"></p>
+<h5 id="Class-Loader"><a href="#Class-Loader" class="headerlink" title="Class Loader"></a>Class Loader</h5><p>컴파일러에 의해 바이트코드로 변환된 코드를 <em>Runtime Data Areas</em> 에 클래스 단위로 로드시키고, <em>Link</em> 를 통해 적절히 배치시키는 작업을 한다. <em>Class Loader</em> 로 인해 동적으로 클래스를 로드할 수 있다.</p>
+<h5 id="Execution-Engine"><a href="#Execution-Engine" class="headerlink" title="Execution Engine"></a>Execution Engine</h5><p><em>Runtime Data Areas</em> 에 배치된 바이트 코드를 실행시키는 역할을 한다. 메모리에 올라온 코드를 명령어 단위로 실행한다.</p>
+<h5 id="Garbage-Collector"><a href="#Garbage-Collector" class="headerlink" title="Garbage Collector"></a>Garbage Collector</h5><p>어플리케이션이 생성한 객체의 생존여부를 판단하여 더 이상 사용되지 않는 객체의 메모리를 반환함으로써 메모리를 자동적으로 관리하는 역할을 한다.</p>
+<h5 id="Runtime-Data-Areas"><a href="#Runtime-Data-Areas" class="headerlink" title="Runtime Data Areas"></a>Runtime Data Areas</h5><p>운영체제로부터 할당받은 메모리를 관리하는 영역이다. <em>JVM</em> 에서 관리하는 메모리 영역은 <em>Method(Static or Class) Area</em>, <em>Runtime Constant Pool</em>, <em>Heap Area</em>, <em>Stack Area</em>, <em>PC Register</em>, <em>Native Method Stack Area</em> 으로 나뉜다.</p>
+<h5 id="Method-Static-or-Class-Area"><a href="#Method-Static-or-Class-Area" class="headerlink" title="Method (Static or Class) Area"></a>Method (Static or Class) Area</h5><p>호출한 클래스와 인터페이스에 대한 <em>Runtime Constant Pool</em>, 메소드와 필드, Statoc 변수, 메소드 바이트 코드 등을 저장한다.</p>
+<h5 id="Runtime-Constant-Pool"><a href="#Runtime-Constant-Pool" class="headerlink" title="Runtime Constant Pool"></a>Runtime Constant Pool</h5><p><em>Method Area</em> 영역에 포함되는 공간이다. 클래스와 인터페이스 상수, 메소드와 필드에 대한 모든 <em>reference</em>를 저장한다.</p>
+<p><img src="http://cfile24.uf.tistory.com/image/216AE04C5654207F0AA967" alt="Runtime Data Areas 구조"></p>
+<h5 id="Heap-Area"><a href="#Heap-Area" class="headerlink" title="Heap Area"></a>Heap Area</h5><p>런타임에서 동적으로 할당하는 객체를 저장하는 공간이다. <code>new</code>연산을 통해 생성되는 객체와 배열을 저장하며 <em>GC</em>의 주 대상이 된다.</p>
+<p><strong>Heap Area 메모리 관리</strong></p>
+<ul>
+<li><strong>Young Generation</strong> - 객체가 생성되자마자 저장되는 공간이다. 시간이 지날수록 우선순위가 낮아지며 <em>Old</em> 영역으로 내려가게 된다. 이곳에서 객체가 사라지면 <em>Minor GC</em> 가 발생한다.</li>
+<li><strong>Old Generation</strong> - 오래된 객체가 저장되는 공간이다. 이곳에서 객체가 사라지면 <em>Major GC</em> 가 발생한다.</li>
+<li><strong>Permanent Generation</strong> - <em>Class Loader</em> 에 의해 로드되는 클래스나 메소드에 대한 <em>Meta</em> 정보가 저장되는 영역이다. <code>Reflection</code>을 이용하여 동적으로 클래스를 로드하는 경우 자주 사용된다.</li>
+</ul>
+<h5 id="Stack-Area"><a href="#Stack-Area" class="headerlink" title="Stack Area"></a>Stack Area</h5><p><em>Stack</em> 구조의 저장공간이다. 함수 호출시 발생하는 지역변수, 매개변수, 연산 데이터 등을 저장하는 공간이다. 함수를 호출하면 <code>push</code>를 통해 <em>Stack</em> 에 저장하고 함수 호출이 종료되면 다음 실행할 함수를 <code>pop</code>하여 함수를 실행한다. 스레드 별로 저장공간을 따로 생성하여 관리한다.</p>
+<h5 id="PC-Register"><a href="#PC-Register" class="headerlink" title="PC Register"></a>PC Register</h5><p>현재 수행 중이거나 다음에 실행할 인스트럭션 주소를 저장한다. 연산 수행 중 발생하는 데이터를 레지스터에 저장하였다가 <em>CPU</em>가 필요할 때 가져다 쓴다. 스레드 별로 공간을 만들어 관리한다</p>
+<h5 id="Native-Method-Stack-Area"><a href="#Native-Method-Stack-Area" class="headerlink" title="Native Method Stack Area"></a>Native Method Stack Area</h5><p>자바가 접근할 수 없는 영역은 <code>C</code>와 같은 <em>Low Level</em> 언어로 작성되어 있다. 따라서 <em>Native</em> 코드를 실행시키면서 발생하는 데이터를 <em>Stack</em> 구조로 저장하기 위한 공간이다. 스레드 별로 생성된다.</p>
+<blockquote>
+<h5 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h5><p><a href="http://hipercube.tistory.com/entry/JAVA-JVM%EA%B3%BC-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0%EC%9D%84-%EC%9C%84%ED%95%9C-GC%EC%9D%98-%ED%99%9C%EC%9A%A9" target="_blank" rel="external">JVM과 메모리 구조(성능 개선을 이한 GC의 활용)</a></p>
+</blockquote>
+<h4 id="Lambda-식이란"><a href="#Lambda-식이란" class="headerlink" title="Lambda 식이란"></a>Lambda 식이란</h4><p><em>Lambda</em> 는 함수에 대한 이론적 기반을 세우는 수학적 추상화를 뜻하고 이것을 프로그래밍에 녹여서 표현한 것이 <em>Lambda</em> 표현식이다. 프로그래밍에서 <em>Lambda</em> 에 근간을 두어 설계한 패러다임이 함수형 프로그래밍이다. 함수형 프로그래밍은 함수의 입력만을 의존하여 출력을 만드는 프로그래밍 패러다임이다. 함수 개념에 근간을 두어 설계하였기에 다음과 같은 특징을 가진다.</p>
+<ol>
+<li>함수를 객체로 사용함으로써 값으로 할당하거나 파라미터로 전달이 가능하다. (고계함수)</li>
+<li>함수를 불변상태로 규정하여 부작용을 최소화하고 멀티 스레드 환경에서 동기성 문제에 안전하다. (순수함수)</li>
+<li>코드를 간결하게 하여 가독성을 높임으로써 로직에 집중시킨다. (익명함수)</li>
+</ol>
+<p><em>Java 8</em> 이전에는 함수에 대한 특별한 개념이 없었고 지원하는 기능도 없었다. 하지만 <em>Java 8</em> 에서부터 람다식과 함수형 인터페이스라는 개념을 도입하여 인터페이스 안에 단 하나의 함수를 선언하여 이것을 객체처럼 사용하고 람다식으로 표현이 가능하도록 지원하였다. 또한 단 하나의 함수만 들어가는 것을 보장하기 위해 <code>@FunctionalInterface</code> 라고 선언함으로써 컴파일 타임에 에러를 잡을 수 있게 하였다.</p>
+<blockquote>
+<h5 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h5><p><a href="https://ko.wikipedia.org/wiki/%ED%95%A8%EC%88%98%ED%98%95_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D" target="_blank" rel="external">위키백과 - 함수형 프로그래밍</a></p>
+<p><a href="https://medium.com/@lazysoul/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%9D%B4%EB%9E%80-d881230f2a5e" target="_blank" rel="external">Medium - 함수형 프로그래밍이란?</a></p>
+<p><a href="https://skyoo2003.github.io/post/2016/11/09/java8-lambda-expression" target="_blank" rel="external">Java 8 람다 표현식 자세히 살펴보기</a></p>
+</blockquote>
+<h4 id="ListView의-문제점"><a href="#ListView의-문제점" class="headerlink" title="ListView의 문제점"></a>ListView의 문제점</h4><ol>
+<li><em>ViewHolder Pattern</em> 을 강요하지 않는다.</li>
+<li><em>Vertical</em> 모드만 지원한다.</li>
+<li><em>Animation</em> 을 따로 지원하지 않기에 뷰에 대해 직접 구현해야 한다.</li>
+<li>데이터가 변경될때 <code>notifyDataSetChanged()</code> 를 통해 뷰를 갱신하는데 모든 뷰를 갱신하기에 비용이 매우 크다.</li>
+</ol>
+<p>이러한 문제를 해결하고자 <code>RecyclerView</code> 가 나왔다. <code>RecyclerView</code> 의 장점은 <code>RecyclerView.ViewHolder</code>, <code>Layoutmanager</code>, <code>ItemAnimator</code>, <code>ItemDecoration</code>, <code>DiffUtil</code>, <code>OnItemTouchListener</code> 가 있으며 이것을 통해 문제점을 개선하였다.</p>
+<h5 id="RecyclerView-ViewHolder"><a href="#RecyclerView-ViewHolder" class="headerlink" title="RecyclerView.ViewHolder"></a>RecyclerView.ViewHolder</h5><p><code>RecyclerView</code> 에서는 <code>ViewHolder</code> 를 강제하고 있기에 뷰에 대한 <code>findViewById()</code> 작업 비용을 줄일 수 있다. <code>ListView</code> 에서도 직접 패턴을 구현하여 적용할 수 있지만, 강제하지 않기 때문에 잘못 사용될 위험이 공존한다.</p>
+<h5 id="LayoutManager"><a href="#LayoutManager" class="headerlink" title="LayoutManager"></a>LayoutManager</h5><p><code>LayoutManager</code>를 통해 <em>Liear</em>, <em>Grid</em>, <em>Staggered</em> 형식으로 다양하게 리스트뷰를 확장할 수 있다. <em>Liear</em>에서는 <em>Horizontal</em>, <em>Vertical</em> 모드를 지원하기에 오픈 소스를 찾거나 커스텀 할 필요없이 쉽게 구현이 가능하다.</p>
+<h5 id="ItemAnimator"><a href="#ItemAnimator" class="headerlink" title="ItemAnimator"></a>ItemAnimator</h5><p><code>animateAdd</code>, <code>animateRemove</code>, animateMove` 를 구현함으로써 추가, 삭제, 변경시 적용할 애니메이션을 쉽게 적용할 수 있다.</p>
+<h5 id="ItemDecoration"><a href="#ItemDecoration" class="headerlink" title="ItemDecoration"></a>ItemDecoration</h5><p><code>ListView</code> 에서는 <em>xml</em> 파일에 <code>android:divider</code> 항목을 추가함으로써 구현할 수 있지만 모양과 크기를 유연하게 커스텀하기 어렵다. <code>ItemDecoration</code> 은 뷰가 그려질 때 공백을 넣거나, 경계선을 추가하는 등 뷰를 꾸미는 작업을 쉽고 다양하게 적용할 수 있다. 따라서 별도의 뷰를 추가하여 성능 저하가 발생하거나, <code>padding</code> 을 통해 뷰에 공백을 추가하여 애니메이션이 어색해지는 문제를 해결할 수 있다.</p>
+<h5 id="DiffUtil"><a href="#DiffUtil" class="headerlink" title="DiffUtil"></a>DiffUtil</h5><p><code>DiffUtil</code>은 데이터의 변화를 감지하여 뷰를 갱신하는 클래스이다. <code>areItemsTheSame</code>, <code>areContentsTheSame</code>, <code>getChangePayload</code> 등을 오버라이딩하여 데이터간 변화를 감지한다. <code>RecyclerView.Adatper</code> 에서 <code>notifyItemMoved</code>, <code>notifyItemRangeChanged</code>, <code>notifyItemRangeInserted</code>, <code>notifyItemRangeRemoved</code> 가 호출되면 <code>DiffUtil</code> 에서 해당 범위의 데이터의 변화를 감지하고 뷰를 선택적으로 갱신함으로써 비용이 큰 <code>notifyDataSetChanged</code> 대신 효율적으로 사용될 수 있다.</p>
+<h5 id="OnItemTouchListener"><a href="#OnItemTouchListener" class="headerlink" title="OnItemTouchListener"></a>OnItemTouchListener</h5><p><code>ListView</code> 는 <code>OnItemClickListener</code> 를 통해 아이템 클릭 이벤트를 쉽게 구현할 수 있었다. 반면 <code>RecyclerView</code> 는 ‘OnItemTouchListener` 에서 GestureDetector 를 이용하여 클릭뿐만 아니라 롱클릭이나 탭 등의 다양한 제스쳐 이벤트를 구현할 수 있다. 하지만 구현이 복잡하다는 단점이 있다.</p>
+<blockquote>
+<h5 id="참고-1"><a href="#참고-1" class="headerlink" title="참고"></a>참고</h5><p><a href="https://spotandroid.com/2017/02/05/recyclerview-listview-basic-comparison/" target="_blank" rel="external">RecyclerView &amp; ListView basic comparison</a></p>
+<p><a href="https://stackoverflow.com/questions/26570325/what-are-recyclerview-advantages-compared-to-listview" target="_blank" rel="external">StackOverFlow - What are RecyclerView advantages compared to ListView</a></p>
+<p><a href="https://proandroiddev.com/itemdecoration-in-android-e18a0692d848" target="_blank" rel="external">ProAndroidDev - ItemDecoration in Android</a></p>
+<p><a href="https://android.jlelse.eu/smart-way-to-update-recyclerview-using-diffutil-345941a160e0" target="_blank" rel="external">AndroidPub - Smart way to update RecyclerView using DiffUtil</a></p>
+<p><a href="http://liveonthekeyboard.tistory.com/136" target="_blank" rel="external">Recyclerview OnItemClick 리스너 구현</a></p>
+</blockquote>
+<h4 id="자바-동등성과-동일성"><a href="#자바-동등성과-동일성" class="headerlink" title="자바 동등성과 동일성"></a>자바 동등성과 동일성</h4><p>두 객체변수가 가리키는 객체를 비교할때 두 객체가 가지는 데이터가 같을 경우 <strong>동등성 (equivalent)</strong> 이라고 하고 아예 메모리 상의 같은 객체를 가리키는 경우 <strong>동일성 (identity)</strong> 라고 한다. 보통 동등성을 확인할 때는 <code>equals()</code> 를 사용하고 동일성을 확인할 때는 <code>hashCode()</code> 를 사용한다. </p>
+<h4 id="자바에서-다중상속을-막은-이유"><a href="#자바에서-다중상속을-막은-이유" class="headerlink" title="자바에서 다중상속을 막은 이유"></a>자바에서 다중상속을 막은 이유</h4><h4 id="해시코드란"><a href="#해시코드란" class="headerlink" title="해시코드란"></a>해시코드란</h4><h4 id="Object-클래스에-무슨-함수가-있는가"><a href="#Object-클래스에-무슨-함수가-있는가" class="headerlink" title="Object 클래스에 무슨 함수가 있는가"></a>Object 클래스에 무슨 함수가 있는가</h4><h4 id="Class를-immutable-하게-하려면-어떻게-해야되는가"><a href="#Class를-immutable-하게-하려면-어떻게-해야되는가" class="headerlink" title="Class를 immutable 하게 하려면 어떻게 해야되는가"></a>Class를 immutable 하게 하려면 어떻게 해야되는가</h4><h4 id="디자인-패턴에-대해-설명과-구현"><a href="#디자인-패턴에-대해-설명과-구현" class="headerlink" title="디자인 패턴에 대해 설명과 구현"></a>디자인 패턴에 대해 설명과 구현</h4><h4 id="곱셉을-할때-속도를-빠르게-하려면-어떻게-할-것인가"><a href="#곱셉을-할때-속도를-빠르게-하려면-어떻게-할-것인가" class="headerlink" title="곱셉을 할때 속도를 빠르게 하려면 어떻게 할 것인가"></a>곱셉을 할때 속도를 빠르게 하려면 어떻게 할 것인가</h4><h4 id="오버라이딩과-오버로딩의-차이-시그니처"><a href="#오버라이딩과-오버로딩의-차이-시그니처" class="headerlink" title="오버라이딩과 오버로딩의 차이 (시그니처)"></a>오버라이딩과 오버로딩의 차이 (시그니처)</h4><h4 id="OOP-란-의존성-역전"><a href="#OOP-란-의존성-역전" class="headerlink" title="OOP 란 (의존성 역전)"></a>OOP 란 (의존성 역전)</h4><h4 id="리플렉션이란"><a href="#리플렉션이란" class="headerlink" title="리플렉션이란"></a>리플렉션이란</h4><h4 id="Serialization-이란"><a href="#Serialization-이란" class="headerlink" title="Serialization 이란"></a>Serialization 이란</h4><h4 id="Set-vs-List"><a href="#Set-vs-List" class="headerlink" title="Set vs List"></a>Set vs List</h4><h4 id="Looper-와-Handler"><a href="#Looper-와-Handler" class="headerlink" title="Looper 와 Handler"></a>Looper 와 Handler</h4><h4 id="메인-스레드가-아닌-스레도에도-루퍼가-있는가-어떻게-만들-수-있나"><a href="#메인-스레드가-아닌-스레도에도-루퍼가-있는가-어떻게-만들-수-있나" class="headerlink" title="메인 스레드가 아닌 스레도에도 루퍼가 있는가? 어떻게 만들 수 있나?"></a>메인 스레드가 아닌 스레도에도 루퍼가 있는가? 어떻게 만들 수 있나?</h4><h4 id="Looper-quit-와-quitsafely-차이"><a href="#Looper-quit-와-quitsafely-차이" class="headerlink" title="Looper.quit() 와 quitsafely 차이"></a>Looper.quit() 와 quitsafely 차이</h4><h4 id="새로운-안드로이드-버전-특징-8"><a href="#새로운-안드로이드-버전-특징-8" class="headerlink" title="새로운 안드로이드 버전 특징 (8 ~)"></a>새로운 안드로이드 버전 특징 (8 ~)</h4><h4 id="안드로이드-4대-컴포넌트"><a href="#안드로이드-4대-컴포넌트" class="headerlink" title="안드로이드 4대 컴포넌트"></a>안드로이드 4대 컴포넌트</h4><h4 id="Intent-Flag-설명-SingleTop-ClearTop"><a href="#Intent-Flag-설명-SingleTop-ClearTop" class="headerlink" title="Intent Flag 설명 (SingleTop, ClearTop)"></a>Intent Flag 설명 (SingleTop, ClearTop)</h4><h4 id="Context-란"><a href="#Context-란" class="headerlink" title="Context 란"></a>Context 란</h4><h4 id="Java-8에-추가된-것들"><a href="#Java-8에-추가된-것들" class="headerlink" title="Java 8에 추가된 것들"></a>Java 8에 추가된 것들</h4><h4 id="메인스레드에-대해-설명"><a href="#메인스레드에-대해-설명" class="headerlink" title="메인스레드에 대해 설명"></a>메인스레드에 대해 설명</h4><h4 id="MVC-MVP-MVVM"><a href="#MVC-MVP-MVVM" class="headerlink" title="MVC, MVP, MVVM"></a>MVC, MVP, MVVM</h4><h4 id="SparseArray-와-HashMap-차이"><a href="#SparseArray-와-HashMap-차이" class="headerlink" title="SparseArray 와 HashMap 차이"></a>SparseArray 와 HashMap 차이</h4><h4 id="TedPermission-작동-원리"><a href="#TedPermission-작동-원리" class="headerlink" title="TedPermission 작동 원리"></a>TedPermission 작동 원리</h4><h4 id="이벤트-버스란-대체할-것은"><a href="#이벤트-버스란-대체할-것은" class="headerlink" title="이벤트 버스란? 대체할 것은?"></a>이벤트 버스란? 대체할 것은?</h4><h4 id="LRU-cache"><a href="#LRU-cache" class="headerlink" title="LRU cache"></a>LRU cache</h4><h4 id="버터나이프-뷰인젝터-만들어지는-과정"><a href="#버터나이프-뷰인젝터-만들어지는-과정" class="headerlink" title="버터나이프, 뷰인젝터 만들어지는 과정"></a>버터나이프, 뷰인젝터 만들어지는 과정</h4><h4 id="액티비티와-프래그먼트-차이"><a href="#액티비티와-프래그먼트-차이" class="headerlink" title="액티비티와 프래그먼트 차이"></a>액티비티와 프래그먼트 차이</h4></section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#취업준비" >
+    <span class="tag-code">취업준비</span>
+  </a>
+
+      </div>
+    
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/03/26/안드로이드 면접/">
+        <span class="nav-arrow">← </span>
+        
+          안드로이드 면접
+        
+      </a>
+    
+    
+  </div>
+
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          후원
+        <span class="money-code">
+          <span class="kakaopay-code">
+            <div class="code-image"></div>
+          </span>
+        </span>
+        </div>
+      <p class="notice">이 포스트가 도움이 되었다고 생각하시면, 위의 버튼을 클릭하여 후원해주세요.</p>
+      </div>
+    
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+      <p class="notice">이 포스트를 공유하려면 QR 코드를 스캔하세요.</p>
+      </div>
+    
+    
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Java-메모리구조-Heap-Data-Stack"><span class="toc-nav-text">Java 메모리구조 Heap, Data, Stack</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Class-Loader"><span class="toc-nav-text">Class Loader</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Execution-Engine"><span class="toc-nav-text">Execution Engine</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Garbage-Collector"><span class="toc-nav-text">Garbage Collector</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Runtime-Data-Areas"><span class="toc-nav-text">Runtime Data Areas</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Method-Static-or-Class-Area"><span class="toc-nav-text">Method (Static or Class) Area</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Runtime-Constant-Pool"><span class="toc-nav-text">Runtime Constant Pool</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Heap-Area"><span class="toc-nav-text">Heap Area</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Stack-Area"><span class="toc-nav-text">Stack Area</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#PC-Register"><span class="toc-nav-text">PC Register</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Native-Method-Stack-Area"><span class="toc-nav-text">Native Method Stack Area</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참고"><span class="toc-nav-text">참고</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Lambda-식이란"><span class="toc-nav-text">Lambda 식이란</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ListView의-문제점"><span class="toc-nav-text">ListView의 문제점</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#RecyclerView-ViewHolder"><span class="toc-nav-text">RecyclerView.ViewHolder</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#LayoutManager"><span class="toc-nav-text">LayoutManager</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ItemAnimator"><span class="toc-nav-text">ItemAnimator</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ItemDecoration"><span class="toc-nav-text">ItemDecoration</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#DiffUtil"><span class="toc-nav-text">DiffUtil</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#OnItemTouchListener"><span class="toc-nav-text">OnItemTouchListener</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참고-1"><span class="toc-nav-text">참고</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#자바-동등성과-동일성"><span class="toc-nav-text">자바 동등성과 동일성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#자바에서-다중상속을-막은-이유"><span class="toc-nav-text">자바에서 다중상속을 막은 이유</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#해시코드란"><span class="toc-nav-text">해시코드란</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Object-클래스에-무슨-함수가-있는가"><span class="toc-nav-text">Object 클래스에 무슨 함수가 있는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Class를-immutable-하게-하려면-어떻게-해야되는가"><span class="toc-nav-text">Class를 immutable 하게 하려면 어떻게 해야되는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#디자인-패턴에-대해-설명과-구현"><span class="toc-nav-text">디자인 패턴에 대해 설명과 구현</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#곱셉을-할때-속도를-빠르게-하려면-어떻게-할-것인가"><span class="toc-nav-text">곱셉을 할때 속도를 빠르게 하려면 어떻게 할 것인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#오버라이딩과-오버로딩의-차이-시그니처"><span class="toc-nav-text">오버라이딩과 오버로딩의 차이 (시그니처)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#OOP-란-의존성-역전"><span class="toc-nav-text">OOP 란 (의존성 역전)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#리플렉션이란"><span class="toc-nav-text">리플렉션이란</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Serialization-이란"><span class="toc-nav-text">Serialization 이란</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Set-vs-List"><span class="toc-nav-text">Set vs List</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Looper-와-Handler"><span class="toc-nav-text">Looper 와 Handler</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#메인-스레드가-아닌-스레도에도-루퍼가-있는가-어떻게-만들-수-있나"><span class="toc-nav-text">메인 스레드가 아닌 스레도에도 루퍼가 있는가? 어떻게 만들 수 있나?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Looper-quit-와-quitsafely-차이"><span class="toc-nav-text">Looper.quit() 와 quitsafely 차이</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#새로운-안드로이드-버전-특징-8"><span class="toc-nav-text">새로운 안드로이드 버전 특징 (8 ~)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#안드로이드-4대-컴포넌트"><span class="toc-nav-text">안드로이드 4대 컴포넌트</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Intent-Flag-설명-SingleTop-ClearTop"><span class="toc-nav-text">Intent Flag 설명 (SingleTop, ClearTop)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Context-란"><span class="toc-nav-text">Context 란</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Java-8에-추가된-것들"><span class="toc-nav-text">Java 8에 추가된 것들</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#메인스레드에-대해-설명"><span class="toc-nav-text">메인스레드에 대해 설명</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MVC-MVP-MVVM"><span class="toc-nav-text">MVC, MVP, MVVM</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SparseArray-와-HashMap-차이"><span class="toc-nav-text">SparseArray 와 HashMap 차이</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TedPermission-작동-원리"><span class="toc-nav-text">TedPermission 작동 원리</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#이벤트-버스란-대체할-것은"><span class="toc-nav-text">이벤트 버스란? 대체할 것은?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LRU-cache"><span class="toc-nav-text">LRU cache</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#버터나이프-뷰인젝터-만들어지는-과정"><span class="toc-nav-text">버터나이프, 뷰인젝터 만들어지는 과정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#액티비티와-프래그먼트-차이"><span class="toc-nav-text">액티비티와 프래그먼트 차이</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://hyeonu1258.github.io/2018/03/28/안드로이드 면접2/';
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "hyeonu1258";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "안드로이드 면접2",
+        owner: "hyeonu1258",
+        repo: "hyeonu1258.github.io",
+        oauth: {
+          client_id: "058b1d67f791e1b7bb00",
+          client_secret: "fbfb73021f7786a1b20ae6d48e54af20534d8c4e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
