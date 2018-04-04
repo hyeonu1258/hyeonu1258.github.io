@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Hyeonu&#39;s blog">
+  <meta name="keyword" content="android, java, kotlin">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      현우의 개발노트
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>현우의 개발노트</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2></h2>
+  <p class="post-date">2018-04-05</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>##자바스크립트의 특징</p>
+<p><code>객체기반</code> <code>단일 스레드</code> <code>스크립트</code> 언어로서 웹 브라우저 내에서 많이 사용되는 언어이다. 브라우저 별로 자바스크립트 코드를 읽고 실행할 수 있는 자바스크립트 엔진이 있으며 자바스크립트 엔진에 의해 해석되어 실행된다. 실제로 자바스크립트의 특징에서는 동시성이나 비동기 실행과 관련한 내용은 없다. 자바스크립트 엔진에서 또한 Call Stack 을 통해 들어오는 요청을 스택에 담아 처리할 뿐이다. 비동기 관련 기능은 자바스크립트 엔진 외부에서 실행되며, 브라우저나 node.js 가 담당한다. 따라서 자바스크립트가 구동되는 환경 즉, 브라우저나 node.js 에서는 멀티 스레드가 사용되며, 이런 외부 환경과 자바스크립트 엔진의 연동을 위해 사용되는 장치가 <code>이벤트 루프</code>이다.</p>
+<p>##브라우저</p>
+<p>자바스크립트 엔진과 Web API, Task Queue 그리고 이벤트 루프로 이루어져있으며 자바스크립트 엔진에 없는 Web API 를 통해 timer 나 XmlHttpRequest 함수들 기능을 사용할 수 있는 환경을 제공한다. </p>
+<p><img src="https://cloud.githubusercontent.com/assets/12269489/16215491/b1493856-379d-11e6-9c16-a9a4cf841567.png" alt="Browser-Event"></p>
+<h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><p>네트워크 서버사이드 어플리케이션 개발에 사용되는 <code>소프트웨어 플랫폼</code>이다. 작성 언어는 자바 스크립트이며 <code>이벤트 루프</code>기반의 <code>비동기 방식</code>으로 <code>Non-Blocking I/O</code>를 지원하여 <code>단일스레드</code>에 <code>단일스택</code>임에도 불구하고 높은 성능을 가지고 있는 특징이 있다. (그럼 자바스크립트가 단일 스레드라는 것인가?? 언어가 단일스레드?? 아니면 자바스크립트 엔진이 단일스레드만 지원한다는 뜻인가??)</p>
+<h2 id="node-js-의-구조"><a href="#node-js-의-구조" class="headerlink" title="node.js 의 구조"></a>node.js 의 구조</h2><p>콜백을 담는 별도의 큐와 이것을 처리하기 위한 이벤트 루프가 자바스크립트 외부에 존재하는 등 브라우저와 비슷한 구조를 보인다. node.js 에서는 비동기 실행을 위해 libuv 라이브러리를 사용하며, libuv 가 이벤트 루프를 제공한다. 자바스크립트 엔진은 비동기 작업을 위해 node.js api 를 호출하며, 이때 넘겨받은 콜백은 libuv의 이벤트 루프를 통해 스케쥴되고, 실행된다.</p>
+<p><img src="https://pbs.twimg.com/media/Bt5ywJrIEAAKJQt.jpg" alt="NodeJS"></p>
+<p>코드를 실행할 때 동기적으로 처리되는 함수들은 자바스크립트엔진 내의 호출 스택(call stack)에 쌓여 하나씩 실행되지만, 비동기로 실행되는 함수는 node api 를 통해 libuv 에 바인딩되어 libuv에 넘겨지게 되고, libuv 내의 스레드풀에서 처리되어 나온 결과는 콜백 함수에 담겨 이벤트 큐에 쌓이게 된다. </p>
+<blockquote>
+<p>비동기 요청은 따로 큐가 존재하지 않나?? 일반적으로는 태스크 큐 같은 곳에 I/O 요청이 쌓일거 같은데 </p>
+</blockquote>
+<p>이벤트 큐에 쌓인 콜백 함수들은 바로 사용되는 것이 아니라 자바스크립트엔진에 있는 호출 스택(call stack)이 비어 있을 경우에 이벤트 루프가 이벤트 큐에서 함수를 하나 가져와 호출 스택(call stack)에 쌓게되면서 실행이 된다.</p>
+<p><img src="http://4.bp.blogspot.com/-MYY3w4Y_lAg/VCHi63G4DGI/AAAAAAAAA3c/FrbGjnJbPnQ/s1600/event_loop.jpg" alt="Event-Loop"></p>
+<h2 id="libuv"><a href="#libuv" class="headerlink" title="libuv"></a>libuv</h2><p>node.js 의 비동기 I/O 를 지원하는 멀티스레드 플랫폼이자 라이브러리이다.</p>
+<blockquote>
+<p>이 함수는 노드 어플리케이션 이벤트 루프에 묶여있던 stat 요청을 libuv에게 전달한다.-무슨뜻</p>
+<p>이벤트 루프는 libuv 안에 있는게 아닌가? 이벤트 루프에 묶여있다는게 무슨뜻일가? stat 요청은 이벤트 큐에 묶인게 아닌가? libuv 는 c 로 이루어진 코드인가?</p>
+</blockquote>
+<p>##이벤트 루프</p>
+<p>시스템 커널에 작업을 떠넘겨서 node.js 가 Non-Blocking 비동기 I/O 작업을 수행하도록 도와주는 객체이다. 콜백 함수가 저장되어 있는 이벤트 큐에서 콜백 함수들을 가져와 호출 스택에 넣는 작업을 한다.</p>
+<blockquote>
+<p>이벤트 루프가 작업을 시스템 커널에 넘기는 기능도 하는 것인가? 프로그램이 I/O요청을 하면 node api가 바인딩 작업 통해 libuv 로 넘겨서 libuv가 외부 장치에 작업을 넘기고 작업이 끝나면 콜백함수가 이벤트 큐에 담기는 것이 아닌가?</p>
+</blockquote>
+</section>
+    <!-- Tags START -->
+    
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/04/04/포트폴리오 예상질문/">
+        <span class="nav-arrow">← </span>
+        
+          포트폴리오 예상질문
+        
+      </a>
+    
+    
+  </div>
+
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          후원
+        <span class="money-code">
+          <span class="kakaopay-code">
+            <div class="code-image"></div>
+          </span>
+        </span>
+        </div>
+      <p class="notice">이 포스트가 도움이 되었다고 생각하시면, 위의 버튼을 클릭하여 후원해주세요.</p>
+      </div>
+    
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+      <p class="notice">이 포스트를 공유하려면 QR 코드를 스캔하세요.</p>
+      </div>
+    
+    
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#node-js"><span class="toc-nav-text">node.js</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#node-js-의-구조"><span class="toc-nav-text">node.js 의 구조</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#libuv"><span class="toc-nav-text">libuv</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://hyeonu1258.github.io/2018/04/05/node.js 내부구조/';
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "hyeonu1258";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "",
+        owner: "hyeonu1258",
+        repo: "hyeonu1258.github.io",
+        oauth: {
+          client_id: "058b1d67f791e1b7bb00",
+          client_secret: "fbfb73021f7786a1b20ae6d48e54af20534d8c4e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
