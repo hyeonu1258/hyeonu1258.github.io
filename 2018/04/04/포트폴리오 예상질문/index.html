@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Hyeonu&#39;s blog">
+  <meta name="keyword" content="android, java, kotlin">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      포트폴리오 예상질문 | 현우의 개발노트
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>현우의 개발노트</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>포트폴리오 예상질문</h2>
+  <p class="post-date">2018-04-04</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h4 id="잠금화면에서-동전을-움직이는-애니메이션을-어떻게-구현하였나요"><a href="#잠금화면에서-동전을-움직이는-애니메이션을-어떻게-구현하였나요" class="headerlink" title="잠금화면에서 동전을 움직이는 애니메이션을 어떻게 구현하였나요?"></a>잠금화면에서 동전을 움직이는 애니메이션을 어떻게 구현하였나요?</h4><p>동전 버튼의 <code>onTouchListener</code> 를 구현하였습니다. <code>onTouch</code> 함수에서 받아오 <code>MotionEvent</code> 값에 따라 <code>ACTION_DOWN</code>, <code>ACTION_UP</code>, <code>ACTION_MOVE</code> 를 구현하였습니다. 처음 <em>X</em> 좌표와 이동한 <em>X</em> 좌표를 빼줌으로써 버튼을 이동시켰습니다.</p>
+<h5 id="ACTION-DOWN"><a href="#ACTION-DOWN" class="headerlink" title="ACTION_DOWN"></a>ACTION_DOWN</h5><p>버튼을 눌렀을 경우 동전의 크기 변화, 화살표 이미지 표시를 하였고, 이때 <em>X</em> 좌표를 저장하여 처음 버튼의 좌표를 저장하였습니다.</p>
+<h5 id="ACTION-MOVE"><a href="#ACTION-MOVE" class="headerlink" title="ACTION_MOVE"></a>ACTION_MOVE</h5><p>처음 버튼 <em>X</em> 좌표에 움직인 <em>X</em> 좌표를 빼주어 이동거리를 구하였습니다. <code>setTranslationX(x)</code> 를 사용하여 이동거리만큼 버튼을 이동시켰습니다. 각 좌우 목표지점의 좌표와 비교하여 근처에 접근하면 버튼을 자동으로 해당 목표지점에 <em>set</em> 함으로써 자석처럼 붙는 액션을 구현하였습니다.</p>
+<h5 id="ACTION-UP"><a href="#ACTION-UP" class="headerlink" title="ACTION_UP"></a>ACTION_UP</h5><p>목표지점에서 터치를 땠을 경우 잠금광고에 따라 기능을 실행하도록 구현하였습니다. 노출광고일 경우 포인트를 적립 후 화면을 종료하였고, 클릭광고일 경우 웹뷰를 띄운 후 화면이 로드되면 포인트를 적립하였습니다. 설치광고는 서비스를 실행시켜서 앱 설치여부를 확인하였고, 일정시간 내에 설치가 완료되면 포인트를 적립하도록 구현하였습니다. 반면 터치를 땠을 때 목표지점이 아닐경우 버튼의 위치를 다시 처음 지점으로 다시 되돌렸습니다.</p>
+<h4 id="광고-노출-측정은-어떻게-구현하셨나요"><a href="#광고-노출-측정은-어떻게-구현하셨나요" class="headerlink" title="광고 노출 측정은 어떻게 구현하셨나요?"></a>광고 노출 측정은 어떻게 구현하셨나요?</h4><h5 id="CPM-노출형-광고"><a href="#CPM-노출형-광고" class="headerlink" title="CPM - 노출형 광고"></a>CPM - 노출형 광고</h5><p>동전 버튼을 타킷 버튼으로 옮기는 순간 서버와 통신하여 광고 노출을 측정합니다. 처음 광고화면을 로드하기전 광고 데이터를 받을때 해당 광고마다 적립 가능 여부도 받기에 이미 적립을 했던 광고이거나 다음 적립까지 일정시간 기다려야하는 경우 클라이언트단에서 적립 불가하도록 막았습니다.</p>
+<h5 id="CPC-클릭형-광고"><a href="#CPC-클릭형-광고" class="headerlink" title="CPC - 클릭형 광고"></a>CPC - 클릭형 광고</h5><p>웹뷰를 띄워 광고를 로드합니다. <code>WebviewClient</code>를 커스텀하여 <code>onPageFinished()</code>가 호출될때마다 서버와 통신하여 광고를 측정하도록 구현하였습니다.</p>
+<h5 id="CPI-설치형-광고"><a href="#CPI-설치형-광고" class="headerlink" title="CPI - 설치형 광고"></a>CPI - 설치형 광고</h5><p>서비스를 실행시켜 앱 설치여부를 체크하면서 광고 노출을 측정하였습니다. 여기서 해결해야할 문제가 4가지 있었습니다. 첫번째는 서비스에서 앱이 설치되었는지 확인하는 문제이고 두번째는 여러 설치광고를 클릭할 경우 여러 앱 설치 여부를 확인하는 문제이며 세번째는 설치광고를 중복 클릭할 경우 이전에 실행되고 있던 서비스를 갱신하는 문제였습니다. 마지막으로 서비스에서 설치여부를 끝내면 그 결과를 액티비티에 전송하는 문제였습니다. </p>
+<p>서비스에서 앱 설치여부를 확인하는 문제는 서비스 내부에서 <code>Timer</code> 스레드를 생성하여 해결하였습니다. 스레드는 10분동안 1분 간격으로 설치 앱 리스트를 확인하여 앱 설치여부를 체크하였습니다. 여러 앱 설치여부는 서비스 내부에서 멀티 스레드를 실행시켜 확인하였습니다. 스레드마다 패키지명을 저장하여 해당 패키지가 설치되면 스레드를 종료하였습니다. </p>
+<p>중복된 설치광고를 클릭하면 이전에 실행하던 스레드를 종료시키고 새로운 스레드를 실행시켜 다시 10분간 설치여부를 확인하여야했습니다. 이 문제는 내부 저장소에 패키지명과 <code>startId</code> 리스트를 키밸류 형태로 저장하여 해결하였습니다. 서비스를 호출할때마다 <code>startId</code> 가 증가하기에 스레드를 구별하는 값으로 활용함으로써 하나의 패키지명에 여러 <code>startId</code> 가 존재하면 가장 마지막에 추가된 <code>startId</code> 를 가지는 스레드만 실행시키고 나머지 <code>startId</code> 를 가지고 있는 스레드는 종료시킴으로서 하나의 스레드만 실행되도록 구현하였습니다.</p>
+<p>서비스가 모든 실행을 끝내고 적립 여부를 액티비티에 알려야 했습니다. 서비스에서 액티비티로 값을 전달하려면 <code>Intent</code> 를 보내야 했고, 이것은 <code>LocalBroadcastManager</code> 를 통해 전달하여 해결하였습니다.</p>
+<h4 id="잠금상태-확인을-receiver-로-어떻게-구현하셨나요"><a href="#잠금상태-확인을-receiver-로-어떻게-구현하셨나요" class="headerlink" title="잠금상태 확인을 receiver 로 어떻게 구현하셨나요?"></a>잠금상태 확인을 receiver 로 어떻게 구현하셨나요?</h4><p><code>IntentFilter</code> 를 <code>BroadcastReceiver</code> 에 등록하여 해결하였습니다. 스크린이 꺼졌을때를 감지하는 <code>Intent.ACTION_SCREEN_OFF</code> 값을 넣은  <code>IntentFilter</code> 를 만들어 <code>registerReceiver(receiver, filter)</code> 를 통해 <em>receiver</em> 에 <em>filter</em> 를 등록하였습니다. 이 작업은 서비스에서 구현하여 앱이 꺼지거나 죽어도 백그라운드 작업이 가능하였습니다. <em>receiver</em> 는 커스텀하여 구현하였는데 <code>onReceive</code> 함수가 호출되면 잠금광고를 보여주는 액티비티를 실행시켜 광고가 나타나도록 구현하였습니다. </p>
+<h4 id="어플리케이션이-죽어도-Service-를-실행시키는-방법을-설명하세요"><a href="#어플리케이션이-죽어도-Service-를-실행시키는-방법을-설명하세요" class="headerlink" title="어플리케이션이 죽어도 Service 를 실행시키는 방법을 설명하세요"></a>어플리케이션이 죽어도 Service 를 실행시키는 방법을 설명하세요</h4><p><code>startService</code> 를 호출하여 어플리케이션이 죽거나 멈추어도 백그라운드에서 돌아가도록 구현하였습니다. <code>bindService</code> 를 호출할 경우 액티비티와 쉽게 자원을 주고받을 수 있지만, 액티비티의 생명주기에 종속되기 때문에 다른 화면으로 넘어가면 서비스도 종료되는 단점이 있습니다. 저의 경우 액티비티와 인터렉션이 거의 없었고, 앱과 독립적으로 구동되어야 했기에 <code>startService</code> 를 사용하였습니다.  <code>startService</code> 에서 <code>onStartCommand()</code> 가 호출될 경우 <code>Timer</code> 스레드를 생성하여 주기적으로 앱 설치를 체크하였고, 반환값으로 <code>START_REDELIVER_INTENT</code> 를 설정함으로써 서비스가 죽어도 서비스를 재생성하되 마지막으로 받은 인텐트를 그대로 사용할 수 있게 구현하였습니다. <code>START_NOT_STICKY</code> 는 서비스가 죽을경우 다시 재생성이 되지 않고, <code>START_STICKY</code> 는 서비스가 재생성되지만 인텐트가 <code>null</code> 이기에 사용할 수 없었습니다.</p>
+<h5 id="Service-와-스레드의-차이는-무엇인가요"><a href="#Service-와-스레드의-차이는-무엇인가요" class="headerlink" title="Service 와 스레드의 차이는 무엇인가요?"></a>Service 와 스레드의 차이는 무엇인가요?</h5><p>스레드는 메인 스레드에서 실행되지 않지만 서비스는 메인 스레드에서 실행됩니다. 허나 서비스가 작업량이 많으면 UI 를 어색하게 만든다는 문제때문에 결국 서비스 안에서 스레드를 생성하여 처리하도록 권장합니다. 따라서 이런관점에서 메인스레드가 아닌 별도의 스레드에서 백그라운드로 실행된다는 점에서 큰 차이가 없어보입니다. 하지만 독립적인 성격과 안정적인 실행이라는 관점에서 다르다고 말할 수 있습니다. 일단 서비스는 스레드보다 안정적입니다. 백그라운드에서 실행될때 스레드보다 우선순위가 높기에 OS 가 자원부족으로 백그라운드 작업을 종료시킬 경우 스레드에 비해 종료될 확률이 적습니다. 또한 서비스가 종료된다고 하더라도 다시 재생성될 수 있어 이전 작업을 이어서 다시 실행할 수 있습니다. 그리고 서비스는 액티비티와 독립적으로 실행될 수 있습니다. <code>startService</code> 로 실행된다면 액티비티가 종료되더라도 백그라운드에서 실행을 지속적으로 이어나갈 수 있기에 UI 와 독립적으로 작업할 수 있습니다.</p>
+<blockquote>
+<h5 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h5><p><a href="https://stackoverflow.com/a/30317061/8453903" target="_blank" rel="external">StackOverFlow - Why to use Service if it runs in the same thread in android</a></p>
+</blockquote>
+<h4 id="안드로이드-6-부터-백그라운드-제한이-있는데-어떻게-대응할건가요"><a href="#안드로이드-6-부터-백그라운드-제한이-있는데-어떻게-대응할건가요" class="headerlink" title="안드로이드 6 부터 백그라운드 제한이 있는데 어떻게 대응할건가요?"></a>안드로이드 6 부터 백그라운드 제한이 있는데 어떻게 대응할건가요?</h4><p>안드로이드 6 부터 Doze 모드와 Standby 모드가 추가되었고 이것은 7, 8로 넘어가면 더욱 규제가 강해졌습니다. 특히 안드로이드 O 부터는 백그라운드 서비스 실행 제한과 암시적 브로드캐스트 인텐트 제한으로 백그라운드 실행에 큰 제약이 생겼습니다. 저의 경우 잠금광고를 구현할때 백그라운드 작업에 큰 영향을 끼치게 됩니다. 해결방법은 두가지가 있습니다. 하나는 <em>foreground</em> 실행이고 다른 하나는 <code>JobScheduler</code> 사용입니다. <em>foreground</em> 실행은 알림에서 서비스가 실행중임을 노출하기에 사용자가 인지할 수 있다는 점에서 권장되고 있고, <code>JobScheduler</code> 의 경우 시스템 레벨에서 처리를 하기 때문에 유사한 작업 요청을 일괄적으로 처리할 수 있어 권장하고 있습니다. 따라서 <em>foreground</em> 으로 실행할 경우 <code>startForegroundService</code> 를 호출하여 서비스를 실행시키고 <code>startForeground</code> 를 통해 알림에 서비스를 알리도록 하면 백그라운드 작업이 가능합니다. <code>Jobscheduler</code> 는 <code>JobService</code> 를 통해 서비스 기능을 구현하고 서비스가 실행할 조건으로 <code>JobInfo</code> 를 정합니다. 화면이 꺼지는 경우는 <code>Charging and Idle</code> 에 해당하므로 이 상태값을 선택한 후 <code>JobScheduler</code> 에 <code>JobInfo</code> 와 <code>JobService</code> 를 등록함으로써 백그라운드 작업이 가능합니다.</p>
+<blockquote>
+<h5 id="참고-1"><a href="#참고-1" class="headerlink" title="참고"></a>참고</h5><p><a href="https://medium.com/marojuns-android/%EC%A2%80-%EB%8D%94-%EC%83%9D%EA%B0%81%ED%95%B4%EB%B3%B8-android-m-%EB%A6%AC%EB%B7%B0-13fbb98c9a87" target="_blank" rel="external">Android 6.0 마시멜로 리뷰</a></p>
+<p><a href="https://medium.com/til-kotlin-ko/android-o%EC%97%90%EC%84%9C%EC%9D%98-%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EC%B2%98%EB%A6%AC%EB%A5%BC-%EC%9C%84%ED%95%9C-jobintentservice-250af2f7783c" target="_blank" rel="external">Android O에서의 백그라운드 처리를 위한 JobIntenteService</a></p>
+<p><a href="http://tourspace.tistory.com/38" target="_blank" rel="external">Android Background 작업을 위한 JobScheduler</a></p>
+<p><a href="http://iiiii18iiiii.tistory.com/entry/%EC%84%9C%EB%B9%84%EC%8A%A4" target="_blank" rel="external">백그라운드 실행 제한</a></p>
+</blockquote>
+<h4 id="용량이-큰-이미지는-어떻게-관리하였나요"><a href="#용량이-큰-이미지는-어떻게-관리하였나요" class="headerlink" title="용량이 큰 이미지는 어떻게 관리하였나요?"></a>용량이 큰 이미지는 어떻게 관리하였나요?</h4><p><code>inJustDecodeBounds</code> 와 <code>inSampleSize</code>, <code>inDensity</code>, <code>inScaled</code> 사용함 설명</p>
+<h4 id="캐싱-알고리즘으로-이미지를-어떻게-관리하였나요"><a href="#캐싱-알고리즘으로-이미지를-어떻게-관리하였나요" class="headerlink" title="캐싱 알고리즘으로 이미지를 어떻게 관리하였나요?"></a>캐싱 알고리즘으로 이미지를 어떻게 관리하였나요?</h4><p>서버로부터 이미지 <em>url</em> 을 받아오면 <em>decode</em> 시  <code>Option</code> 의 <code>inJustDecodeBound</code> 를 <code>true</code> 로 설정하여 이미지의 크기값을 가져왔습니다. 이미지높이를 일정 크기만큼 나누어 <code>ImageView</code> 를 생성했고 각각의 <code>ImageView</code> 에는 이미지의 인덱스와 <em>url</em>, 크기값을 <code>Tag</code> 로 저장하였습니다. 각각의 이미지뷰에 맞는 이미지는 비트맵으로 변환 후 <code>LruCache</code> 클래스를 사용하여 내부 저장소에 저장하였습니다. 동시에 외부 저장소에도 <code>DiskCache</code> 클래스를 사용하여 저장하였습니다. 스크롤을 할때마다 인덱스에 맞는 비트맵을 불러와 적용합니다. <code>LruCache</code> 에서 비트맵이 존재하지 않는 경우 <code>DiskCache</code> 에서 이미지를 불러와 적용하고 내부 메모리에 다시 저장하는 방식으로 구현하였습니다. 만약 <code>DiskCache</code> 에서도 비트맵이 존재하지 않을 경우 <code>ImageView</code> 의 <code>Tag</code> 에 저장되어 있는 <em>url</em> 을 통해 이미지를 다시 받아와 캐시에 저장하도록 보완하였습니다. </p>
+<h4 id="LRU-캐싱이-무엇인가요-어떻게-구현되어-있죠"><a href="#LRU-캐싱이-무엇인가요-어떻게-구현되어-있죠" class="headerlink" title="LRU 캐싱이 무엇인가요? 어떻게 구현되어 있죠?"></a>LRU 캐싱이 무엇인가요? 어떻게 구현되어 있죠?</h4><p>새로운 데이터를 삽입할때 공간이 부족할시 가장 오랫동안 사용되지 않은 데이터를 지우고 삽입하는 알고리즘으로 구현된 캐시입니다. </p>
+<h4 id="Disk-캐시-과정을-설명해보세요"><a href="#Disk-캐시-과정을-설명해보세요" class="headerlink" title="Disk 캐시 과정을 설명해보세요"></a>Disk 캐시 과정을 설명해보세요</h4><p><code>DiskCache</code> 클래스는 내부적으로 <code>Entry</code> , <code>LinkedEntries</code> , <code>Snapshot</code> , <code>Editor</code> , <code>JournalFile</code> 로 이루어져 있습니다. </p>
+<p><code>Entry</code> 객체는 캐시데이터에 대한 항목을 나타내는 객체입니다. 캐시데이터의 키값과, 읽기가 가능한지 여부, <code>Editor</code> 객체 등을 저장하고 있고, <code>sequenceNumber</code> 라는 값을 가지고 있습니다.  <code>sequenceNumber</code> 값은 가장 최근에 <em>commit</em> 된 숫자를 나타냅니다. 이것은 <code>Snapshot</code> 에서 가지고 있는 <code>Entry</code> 의 값이 가장 최근에 <em>commit</em> 된 유효한 값인지 아니면 효과가 사라진 이전의 값인지를 판단하는데에 사용됩니다. <code>getDirtyFile()</code> , <code>getCleanFile()</code> 함수를 구현하고 있어, 캐시데이터가 저장되어있는 파일경로를 반환받을 수 있습니다.</p>
+<p><code>LruEntries</code> 는 <code>Entry</code> 객체들을 연결한 <code>LinkedHashMap</code> 구조의 자료구조입니다. 캐시 항목들을 관리하기 위해 사용되며 생성된 <code>Entry</code> 객체들은 여기에 추가되고 삭제된 <code>Entry</code> 는 맵에서 삭제됩니다. <code>LinkedHashMap</code> 을 사용한 이유는 <strong>LRU 알고리즘</strong> 을 적용하기 위해서입니다. <code>LinkedHashMap</code> 의 기본생성자는 추가된 데이터 순으로 순서를 유지하지만 여기서 사용하는 <code>LinkedHashMap(int,float,boolean)</code> 사용자는 접근하는 순으로 <code>Map</code> 의 순서를 매번 갱신합니다. 또한 <code>LruEntries</code> 에서 데이터를 삭제하면 오랫동안 사용되지 않은 첫번째 인덱스의 데이터가 삭제됨으로써 <strong>LRU 알고리즘</strong> 에 맞추어 정렬됩니다. </p>
+<p><code>Snapshot</code> 객체는 <code>Entry</code> 객체에 대한 스냅샷을 리턴하는 객체입니다. 사용자가 <code>cache.get(key)</code> 를 호출한다면 이 객체가  반환됩니다. 이 객체는 캐시데이터를 추출하기 위한 정보들을 가지고 있습니다. <code>Snapshot</code> 객체에는 <code>Entry</code> 의 키값과 캐시데이터를 읽기위한 <code>InputStream</code> 객체, 그리고 <em>commit</em> 숫자를 나타내는 <code>sequenceNumber</code> 를 가지고 있습니다.</p>
+<p><code>Editor</code> 객체는 <code>Entry</code> 객체를 감싸고 있는 클래스로써, 디스크에서 <code>Entry</code> 정보에 대해 읽고 쓰는 요청을 처리하는 객체입니다. <code>Entry</code> 객체를 편집하려고 하면 <code>Editor</code> 객체가 생성되어 <code>Entry</code> 객체를 감싸게 됩니다. <code>Editor</code> 내부에서는 <code>Entry</code> 에 대해 쓰거나 읽는 요청을 <code>synchronized</code> 로 처리함으로써 동시에 객체가 수정될 수 있는 문제를 막습니다.</p>
+<p><code>Journal file</code> 은 캐시를 만드는데 발생하는 다양한 연산을 기록하는 파일입니다. <code>Journal file</code> 은 캐시 작업에 대한 로그를 남김으로써 앱이 다시 시작할때 파일기록을 바탕으로 <code>Entry</code> 리스트를 갱신시키고 캐시파일을 <em>refresh</em> 합니다. 쓰는 작업을 하던 중 앱이 죽어버리면 <em>Dirty</em> 상태로 남습니다. 다시 앱을 시작하면 파일을 읽으면서 <em>Dirty</em> 된 캐시를 추적하여 삭제하기때문에  캐시데이터의 일관성을 유지시킬 수 있습니다.</p>
+<blockquote>
+<h5 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h5><p><a href="https://medium.com/mindorks/this-post-is-about-the-implementation-details-of-jake-whartons-famous-disklrucache-9a87d90206fe" target="_blank" rel="external">A deep dive into Jake Wharton’s DiskLruCache</a></p>
+</blockquote>
+<h4 id="Disk-캐싱에서-쓰기-실행시-동기화-문제를-어떻게-해결하였나요"><a href="#Disk-캐싱에서-쓰기-실행시-동기화-문제를-어떻게-해결하였나요" class="headerlink" title="Disk 캐싱에서 쓰기 실행시 동기화 문제를 어떻게 해결하였나요?"></a>Disk 캐싱에서 쓰기 실행시 동기화 문제를 어떻게 해결하였나요?</h4><p><code>DiskLruCache</code> 내부구조를 설명하면서 <code>Entry</code> 와 <code>Editor</code> 간의 관계를 설명 - <code>Editor</code> 가 <code>Entry</code> 를 감싸는 구조이며 <code>Editor</code> 가 생성되면 정보를 수정 중이라는 의미이기 때문에 <code>Editor</code> 가 <code>null</code> 일때까지 <code>Entry</code> 에 접근 불가하도록 막아놨다. 또한 <code>Editor</code> 내부에서 <code>Entry</code> 를 읽거나 쓰는 작업을 <code>synchronized</code> 로 실행하여 동기화를 유지한다.</p>
+<h4 id="자연스러운-스크롤을-어떻게-적용하였나요"><a href="#자연스러운-스크롤을-어떻게-적용하였나요" class="headerlink" title="자연스러운 스크롤을 어떻게 적용하였나요?"></a>자연스러운 스크롤을 어떻게 적용하였나요?</h4><p>너무 많은 이미지가 화면에 그려질 경우 <em>UI Thread</em> 에 과부하가 걸려 스크롤이 부자연스러워지는 문제가 있었습니다. 이것을 해결하고자 화면에 보여지는 <code>ImageView</code> 는 비트맵을 로드하되 보여지지 않는 영역은 <code>setBackground</code> 를 <code>null</code> 로 설정함으로써 이미지를 지워겠다고 생각했습니다. <code>onScrollChangedListener</code> 를 통해 스크롤을 할때마다 현재 화면이 보여지는 영역과 <code>ImageView</code> 길이를 비교하여 몇번째 인덱스의 <code>ImageView</code> 가 화면에 나타나는지 계산하였습니다. 하지만 스크롤할때마다 많은 연산이 필요했고, 또한 이미지를 하나씩 탐색해야했기에 조금은 자연스러워졌지만 여전히 어색한 스크롤을 느꼈습니다. 이것을 보완하고자 <code>getLocalVisibleRect</code> 함수를 사용하여 <code>ImageView</code> 가 <code>ScrollView</code> 에 보이는 영역에 있는지 확인하는 방법을 찾았고, 이것을 사용하여 스크롤을 자연스럽게 구현하였습니다. 내부적으로 화면에 보이는 <code>ImageView</code> 에 캐시이미지를 로드하는 작업과 화면에 보이지 않는 <code>ImageView</code> 의 비트맵을 지우는 작업을 다음과 같이 진행하였습니다.</p>
+<p>화면에 보이는 <code>ImageView</code> 의 <code>Tag</code> 정보를 가져와 인덱스에 맞는 캐시를 불러왔습니다. 내부 메모리에서 캐시된 비트맵이 없으면 외부 메모리, 외부 메모리에 없으면 <em>url</em> 을 통해 비트맵을 가져와 <code>ImageView</code> 에 그려줬습니다.</p>
+<p><code>ImageView</code> 에 비트맵을 그릴때마다 화면에 안보이는 <code>ImageView</code> 의 비트맵을 지우는 작업도 병행하였습니다. 매번 이미지를 비우는 작업도 비용이 크므로 일정 간격의 <code>ImageView</code> 를 지날때만 비우는 작업을 실행하였습니다. <code>ImageView</code> 의 비트맵을 지울때는 상/하 스크롤 경우로 나누어 화면에 보이는 <code>ImageView</code> 와 곧 보일 <code>ImageView</code> 를 제외한 나머지의 <em>Background</em> 를 <code>null</code> 로 설정함으로써 비우는 작업을 구현하였습니다.</p>
+<h4 id="스레드-풀에-대해-설명하세요"><a href="#스레드-풀에-대해-설명하세요" class="headerlink" title="스레드 풀에 대해 설명하세요"></a>스레드 풀에 대해 설명하세요</h4><p>스레드를 생성/수거하는 데에도 비용이 발생하므로 여러 스레드를 미리 생성해놓고 이것을 재사용하도록 관리하는 클래스가 스레드풀입니다. 스레드풀은 어플리케이션에서 사용자도 들어온 요청을 작업큐에 넣고 스레드풀은 작업큐에 있는 작업을 스레드들을 사용하여 처리합니다. 처리가 끝난 스레드는 결과같은 어플리케이션에 리턴하는 구조입니다. 스레드풀의 스레드 개수를 너무 크게 잡아버리면 사용하지 않고 놀고있는 스레드가 생기기 때문에 메모리 낭비가 생기고, 반면 너무 작게 설정하면 작업큐에 작업이 쌓이게 되기에 효율이 저하됩니다. 따라서 적절한 크기를 설정해야합니다. 만약 처리하는 작업이 오래걸리는 작업이라면 다른 스레드는 유휴 시간이 발생하므로 효율적으로 사용되지 않을 수도 있습니다.</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#취업준비" >
+    <span class="tag-code">취업준비</span>
+  </a>
+
+      </div>
+    
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/04/01/안드로이드 면접2/">
+        <span class="nav-arrow">← </span>
+        
+          안드로이드 면접2
+        
+      </a>
+    
+    
+  </div>
+
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          후원
+        <span class="money-code">
+          <span class="kakaopay-code">
+            <div class="code-image"></div>
+          </span>
+        </span>
+        </div>
+      <p class="notice">이 포스트가 도움이 되었다고 생각하시면, 위의 버튼을 클릭하여 후원해주세요.</p>
+      </div>
+    
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+      <p class="notice">이 포스트를 공유하려면 QR 코드를 스캔하세요.</p>
+      </div>
+    
+    
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#잠금화면에서-동전을-움직이는-애니메이션을-어떻게-구현하였나요"><span class="toc-nav-text">잠금화면에서 동전을 움직이는 애니메이션을 어떻게 구현하였나요?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ACTION-DOWN"><span class="toc-nav-text">ACTION_DOWN</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ACTION-MOVE"><span class="toc-nav-text">ACTION_MOVE</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ACTION-UP"><span class="toc-nav-text">ACTION_UP</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#광고-노출-측정은-어떻게-구현하셨나요"><span class="toc-nav-text">광고 노출 측정은 어떻게 구현하셨나요?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#CPM-노출형-광고"><span class="toc-nav-text">CPM - 노출형 광고</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#CPC-클릭형-광고"><span class="toc-nav-text">CPC - 클릭형 광고</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#CPI-설치형-광고"><span class="toc-nav-text">CPI - 설치형 광고</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#잠금상태-확인을-receiver-로-어떻게-구현하셨나요"><span class="toc-nav-text">잠금상태 확인을 receiver 로 어떻게 구현하셨나요?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#어플리케이션이-죽어도-Service-를-실행시키는-방법을-설명하세요"><span class="toc-nav-text">어플리케이션이 죽어도 Service 를 실행시키는 방법을 설명하세요</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Service-와-스레드의-차이는-무엇인가요"><span class="toc-nav-text">Service 와 스레드의 차이는 무엇인가요?</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참고"><span class="toc-nav-text">참고</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#안드로이드-6-부터-백그라운드-제한이-있는데-어떻게-대응할건가요"><span class="toc-nav-text">안드로이드 6 부터 백그라운드 제한이 있는데 어떻게 대응할건가요?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참고-1"><span class="toc-nav-text">참고</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#용량이-큰-이미지는-어떻게-관리하였나요"><span class="toc-nav-text">용량이 큰 이미지는 어떻게 관리하였나요?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#캐싱-알고리즘으로-이미지를-어떻게-관리하였나요"><span class="toc-nav-text">캐싱 알고리즘으로 이미지를 어떻게 관리하였나요?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LRU-캐싱이-무엇인가요-어떻게-구현되어-있죠"><span class="toc-nav-text">LRU 캐싱이 무엇인가요? 어떻게 구현되어 있죠?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Disk-캐시-과정을-설명해보세요"><span class="toc-nav-text">Disk 캐시 과정을 설명해보세요</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#참조"><span class="toc-nav-text">참조</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Disk-캐싱에서-쓰기-실행시-동기화-문제를-어떻게-해결하였나요"><span class="toc-nav-text">Disk 캐싱에서 쓰기 실행시 동기화 문제를 어떻게 해결하였나요?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#자연스러운-스크롤을-어떻게-적용하였나요"><span class="toc-nav-text">자연스러운 스크롤을 어떻게 적용하였나요?</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#스레드-풀에-대해-설명하세요"><span class="toc-nav-text">스레드 풀에 대해 설명하세요</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://hyeonu1258.github.io/2018/04/04/포트폴리오 예상질문/';
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "hyeonu1258";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "포트폴리오 예상질문",
+        owner: "hyeonu1258",
+        repo: "hyeonu1258.github.io",
+        oauth: {
+          client_id: "058b1d67f791e1b7bb00",
+          client_secret: "fbfb73021f7786a1b20ae6d48e54af20534d8c4e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
