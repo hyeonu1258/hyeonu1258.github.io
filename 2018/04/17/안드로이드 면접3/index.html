@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Hyeonu&#39;s blog">
+  <meta name="keyword" content="android, java, kotlin">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      현우의 개발노트
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>현우의 개발노트</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2></h2>
+  <p class="post-date">2018-04-17</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h4 id="density-별로-리사이징한다고-했는데-density-값을-어떻게-정하였는가"><a href="#density-별로-리사이징한다고-했는데-density-값을-어떻게-정하였는가" class="headerlink" title="density 별로 리사이징한다고 했는데 density 값을 어떻게 정하였는가"></a>density 별로 리사이징한다고 했는데 density 값을 어떻게 정하였는가</h4><blockquote>
+<p><a href="http://javacan.tistory.com/entry/Android-Baisc-Resolution-and-DP" target="_blank" rel="external">해상도와 DP</a></p>
+<p><a href="http://fimtrus.tistory.com/entry/Android%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-density-%EA%B5%AC%ED%95%98%EA%B8%B0" target="_blank" rel="external">density 구하기</a></p>
+<p><a href="https://www.captechconsulting.com/blogs/understanding-density-independence-in-android" target="_blank" rel="external">Understanding Density Independence in Android</a></p>
+</blockquote>
+<h4 id="이미지뷰에서-scale-을-조정할-수-있는데-왜-비트맵을-직접-조정햇나"><a href="#이미지뷰에서-scale-을-조정할-수-있는데-왜-비트맵을-직접-조정햇나" class="headerlink" title="이미지뷰에서 scale 을 조정할 수 있는데 왜 비트맵을 직접 조정햇나"></a>이미지뷰에서 scale 을 조정할 수 있는데 왜 비트맵을 직접 조정햇나</h4><p>길이가 제각각인 이미지를 서버로 받아서 동일한 크기의 이미지로 자른 후 총 개수를 파악하여 이미지뷰를 인플레이션 해야했고, 또한 각각의 이미지뷰에 정해진 이미지를 보여주려면 비트맵으로 변환하여 가공하는 과정이 필요했다.</p>
+<h4 id="사용했던-threadpool-설명해봐라-ThreadPool-사이즈는-몇으로-설정햇나-우선순위는-뭐로-설정햇나-다른곳에서도-다-스레드풀을-사용할수도-잇기때문에-풀사이즈-설정이-중요하다-그리고-우선순위도-너무-낮으면-다른-스레드풀에게-밀리므로-우선순위-설정도-중요하다"><a href="#사용했던-threadpool-설명해봐라-ThreadPool-사이즈는-몇으로-설정햇나-우선순위는-뭐로-설정햇나-다른곳에서도-다-스레드풀을-사용할수도-잇기때문에-풀사이즈-설정이-중요하다-그리고-우선순위도-너무-낮으면-다른-스레드풀에게-밀리므로-우선순위-설정도-중요하다" class="headerlink" title="사용했던 threadpool 설명해봐라. ThreadPool 사이즈는 몇으로 설정햇나, 우선순위는 뭐로 설정햇나, 다른곳에서도 다 스레드풀을 사용할수도 잇기때문에 풀사이즈 설정이 중요하다. 그리고 우선순위도 너무 낮으면 다른 스레드풀에게 밀리므로 우선순위 설정도 중요하다."></a>사용했던 threadpool 설명해봐라. ThreadPool 사이즈는 몇으로 설정햇나, 우선순위는 뭐로 설정햇나, 다른곳에서도 다 스레드풀을 사용할수도 잇기때문에 풀사이즈 설정이 중요하다. 그리고 우선순위도 너무 낮으면 다른 스레드풀에게 밀리므로 우선순위 설정도 중요하다.</h4><h4 id="리스트뷰를-안-쓰고-스크롤뷰를-사용한-이유"><a href="#리스트뷰를-안-쓰고-스크롤뷰를-사용한-이유" class="headerlink" title="리스트뷰를 안 쓰고 스크롤뷰를 사용한 이유"></a>리스트뷰를 안 쓰고 스크롤뷰를 사용한 이유</h4><h4 id="WeakReference-에-대해-설명해보아라"><a href="#WeakReference-에-대해-설명해보아라" class="headerlink" title="WeakReference 에 대해 설명해보아라"></a>WeakReference 에 대해 설명해보아라</h4><p>자바에서 Reference 클래스는 Soft, Weak, Phantom 가 있습니다. Reference 클래스는 GC 에 일정 부분 관여하기 위해 만들어진 클래스입니다. GC 가 객체를 수거할때 유효한 참조가 없는 unreachable 상태의 객체를 수거하는데 객체간 여러 참조관계가 존재하기에 유효한 참조 여부를 알기 위해서는 root set 을 확인해야합니다. root set 은 힙이 아닌 스택, 메소드, 네이티브 스택 등에서 참조하는 경우가 root set 에 해당하며 reachability 의 기준이 됩니다. Reference 클래스를 통해 캡술화 된 객체들은 이런 reachable 상태에서도 경우에 따라 GC 에 의해 수거 될 수 있어 의도에 맞게 사용되면 메모리를 더욱 효율적으로 관리할 수 있게 됩니다. WeakReference 에 의해 참조되는 객체가 reference 에 의해서만 참조될 경우 weakly reachable 상태가 됩니다. 이때 GC 는 unreachable 객체 뿐 아니라 weakly reachable 객체까지 수거하게 됩니다. root set 인 reference 부터의 참조 사슬이 존재하지만 메모리가 반환될 수 있기에 항상 유요할 필요가 없는 LRU 캐시와 같은 임시 객체들을 저장하는 구조에 쉽게 사용됩니다. SoftReference 에 의해서만 참조되는 객체는 soft reachable 객체라고 하며 weak reachable 객체와 달리 GC 가 동작할때마다 메모리를 반환하지 않고 더 오래 살아남을 수 있습니다. soft reachable 객체는 힙에 남아있는 메모리양과 해당 객체의 사용빈도에 따라 GC 여부가 결정됩니다. <em>“마지막으로 strongly reachable 상태부터의 시간 &gt; 옵션값 * 힙에 남아있는 메모리 크기”</em> 공식이 성립되지 않으면 GC 에 의해 수거되는 메커니즘입니다. PhantomReference 는 다른 Reference 클래스와 다르게 ReferenceQueue 사용이 필수적입니다. Reference 가 GC 되어 캡슐화 되어 있던 객체가 null 로 바뀌면 해당 객체는 메모리를 즉시 반환하는 것이 아니라 Queue 에 쌓이게 되는데 이것이 ReferenceQueue 입니다. 따라서 ReferenceQueue 에 enqueue 되어 있다는 것만으로 GC 되었는지 파악이 가능하여 후행작업을 진행할 수 있습니다. SoftReference 와 WeakReference 는 ReferenceQueue 를 사용할 수도 있고 사용하지 않을 수도 있지만 PhantomReference 는 이것의 사용이 필수적입니다. PhantomReference 는 GC 로 선정된 객체가 처리되는 과정과 메모리를 회수하는 과정 사이를 관여하는 Reference 입니다. 객체가 finalize 된 이후에 객체는 phantomly reachable 상태가 되며 이때는 PhantomReference 에 의한 참조만 남게 됩니다. phamtomly reachable 로 간주된 객체는 ReferenceQueue 에 enqueue 되고 finalize 이후의 작업을 어플리케이션은 수행하게 됩니다. 이 수행이 끝나고 나서 메모리가 회수되도록 회수를 지연시킬 수 있습니다.</p>
+<blockquote>
+<p><a href="http://d2.naver.com/helloworld/329631" target="_blank" rel="external">Naver D2 - Java Reference 와 GC</a></p>
+<p><a href="http://d2.naver.com/helloworld/1329" target="_blank" rel="external">Naver D2 - Java Garbage Collection</a></p>
+</blockquote>
+<h4 id="서비스와-액티비티와-통신할때-브로드캐스트리시버-외의-방법으로-통신할-수-없는가"><a href="#서비스와-액티비티와-통신할때-브로드캐스트리시버-외의-방법으로-통신할-수-없는가" class="headerlink" title="서비스와 액티비티와 통신할때 브로드캐스트리시버 외의 방법으로 통신할 수 없는가"></a>서비스와 액티비티와 통신할때 브로드캐스트리시버 외의 방법으로 통신할 수 없는가</h4><h5 id="AIDL"><a href="#AIDL" class="headerlink" title="AIDL"></a>AIDL</h5><p>Andoird Interface Definition Language 로 프로세스, 컴포넌트, 네트워크간 통신을 하기 위해 사용됩니다. AIDL 은 객체를 운영체제가 이해할 수 있는 primitive 형태로 해체한 다음 여러 프로세스에 결쳐 전달함으로써 IPC 를 수행할 수 있습니다. Messenger 는 AIDL 의 기본구조이고 AIDL 은 더욱 복잡한 형태입니다. Messenger 는 단일 스레드에서 모든 클라이언트 요청을 하나의 큐로 처리하지만 AIDL 을 직접 사용하면 다중 스레드 환경에서 동시에 여러 요청을 처리할 수 있게 됩니다. 하지만 <em>thread-safe</em> 하게 구축되어야하며 따라서 복잡한 구현이 동반되기에 구현에 주의해야합니다.</p>
+<h5 id="Messenger"><a href="#Messenger" class="headerlink" title="Messenger"></a>Messenger</h5><p>Handler 를 사용하여 프로세스간 message 데이터를 주고 받을 수 있는 통신 방법입니다.  기본적으로 Handler 는 프로세스 내에서 스레드간 통신을 할때 사용되는 클래스이지만 Handler 를 프로세스간 통신으로 확장시키는 것이 Messenger 입니다. Messenger 클래스는 Parcelable 인터페이스를 구현하고 있기에 Messenger 가 Handler 를 감싸면 직렬화를 통한 데이터 전송이 가능해집니다. Service 에서는 클라이언트와 통신을 처리할 Handler 객체를 구현하고 이것을 Messenger 에 담아 <code>onBind()</code> 에서 <code>Messenger.getBinder()</code> 를 통해 <code>IBinder</code> 객체를 반환하도록 합니다. <code>onBind()</code> 에서 반환한 <code>IBinder</code> 객체는 Messenger 가 감싼 Handler 정보를 가지고 있으며 이것은 클라이언트가 구현한 <code>ServiceConnection</code> 객체의 <code>onServiceConnected()</code> 함수에 전달되어 처리됩니다. 한편 Activity 에서는 <code>ServiceConnection</code> 을 정의해야 하며 <code>ServiceConnection</code> 객체의 <code>onServiceConnected()</code> 함수에서 Service 로 부터 전달받은 <code>IBinder</code> 를 <code>Messenger</code> 에 감싸서 <code>Messenger</code> 객체를 생성하게 됩니다. 결국 Activity 와 Service 가 <code>bindService()</code> 를 통해 bind 되면 Service 가 생성한 Handler 를 감싼 Messenger 를 Activity 가 전달 받게 되고 Activity 에서는 Message 를 Messenger 에 담아 <code>Messenger.send(message)</code> 함수를 통해 Service 와 통신을 할 수 있게 됩니다.</p>
+<blockquote>
+<p><a href="https://developer.android.com/guide/components/bound-services.html#Basics" target="_blank" rel="external">Android Developers - 바인드된 서비스</a></p>
+<p><a href="https://developer.android.com/guide/components/aidl.html" target="_blank" rel="external">Android Developers - 안드로이드 인터페이스 정의 언어(AIDL)</a></p>
+<p><a href="https://brunch.co.kr/@huewu/4" target="_blank" rel="external">안드로이드 앱 프로세스 분리하기</a></p>
+</blockquote>
+<h4 id="Looper-와-Thread-MessageQueue-그리고-Handler"><a href="#Looper-와-Thread-MessageQueue-그리고-Handler" class="headerlink" title="Looper 와 Thread, MessageQueue 그리고 Handler"></a>Looper 와 Thread, MessageQueue 그리고 Handler</h4><p>Looper 와 Handler 가 필요한 이유는 여러 스레드에서 들어오는 작업 요청을 하나의 스레드에서 차례대로 처리하기 위함입니다. 예를 들어 안드로이드의 Main Thread 에서 화면의 텍스트를 변경하는 작업과 다른 스레드에서 같은 텍스트를 수정하는 작업이 병렬로 진행된다면 예상치 못한 결과를 초래합니다. 따라서 Main Thread 가 화면처리에 대한 모든 일을 처리하도록 하기 위해 MessageQueue 에 작업을 쌓고 Looper 를 통해 차례대로 처리하는 구조를 가지게 되었습니다.</p>
+<p>Handler 는 다른 Thread 에서 요청하는 메세지를 받아 MessageQueue 에 담는 매개체 역할을 합니다. Handler 는 생성자를 호출하여 생성하게 됩니다. 기본를 호출할 경우 생성자 내부에서는 <code>Looper.myLooper()</code> 를 통해 스레드의 Looper 를 불러와 Handler 의 MessageQueue 멤버변수를 할당함으로써 Handler 와 MessageQueue 를 연결하게 됩니다. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">(Callback callback, <span class="keyword">boolean</span> async)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (FIND_POTENTIAL_LEAKS) &#123;</div><div class="line">        <span class="keyword">final</span> Class&lt;? extends Handler&gt; klass = getClass();</div><div class="line">        <span class="keyword">if</span> ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &amp;&amp;</div><div class="line">            (klass.getModifiers() &amp; Modifier.STATIC) == <span class="number">0</span>) &#123;</div><div class="line">            Log.w(TAG, <span class="string">"The following Handler class should be static or leaks might occur: "</span> +</div><div class="line">                  klass.getCanonicalName());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    mLooper = Looper.myLooper();</div><div class="line">    <span class="keyword">if</span> (mLooper == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(</div><div class="line">            <span class="string">"Can't create handler inside thread that has not called Looper.prepare()"</span>);</div><div class="line">    &#125;</div><div class="line">    mQueue = mLooper.mQueue;</div><div class="line">    mCallback = callback;</div><div class="line">    mAsynchronous = async;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Handler 에서 <code>obtainMessage()</code> 를 호출하면 데이터를 담을 수 있는 <code>Message</code> 객체를 받게 되고 message 에 데이터를 담아 <code>Handler.sendMessage(message)</code> 함수를 통하여 파라미터로 보내면 내부에서 MessageQueue <code>enqueueMessage()</code> 를 호출하여 MessageQueue 에 요청을 쌓는 구조입니다. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">sendMessageAtTime</span><span class="params">(Message msg, <span class="keyword">long</span> uptimeMillis)</span> </span>&#123;</div><div class="line">    MessageQueue queue = mQueue;</div><div class="line">    <span class="keyword">if</span> (queue == <span class="keyword">null</span>) &#123;</div><div class="line">        RuntimeException e = <span class="keyword">new</span> RuntimeException(</div><div class="line">            <span class="keyword">this</span> + <span class="string">" sendMessageAtTime() called with no mQueue"</span>);</div><div class="line">        Log.w(<span class="string">"Looper"</span>, e.getMessage(), e);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> enqueueMessage(queue, msg, uptimeMillis);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Thread는 하나의 Looper 와 MessageQueue 가 연결되어 쌍을 이룹니다. 다른 Thread에서 Message 가 날아오면 MessageQueue 에 쌓이게 되고 이것을 Looper 가 loop() 함수를 통해 선입선출 방식으로 차례대로 처리하게 됩니다. Looper 를 생성하기 위해서는 먼저 Thread 를 생성하고 Runnable 인터페이스를 정의할때 <code>Looper.prepare()</code> 를 호출하면 새로운 Looper 가 생성되어 Thread 에 연결됩니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        Looper.prepare();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Looper 클래스는 static 으로 선언된 정적멤버객체인 <code>ThreadLocal</code> 를 가지며(선언과 동시에 할당된다) <code>prepare()</code> 함수를 호출하면 이 <code>ThreadLocal</code> 에서 새로운 <code>Looper</code> 객체를 파라미터로 갖는 <code>set(T value)</code> 함수를 호출합니다. Looper 객체는 생성자에 의해 생성되며 생성자 내부에서는 <code>MessegeQueue</code> 를 새로 생성하고, Thread 는 <code>Thread.currentThread()</code> 함수를 호출함으로써 현재 Thread 를 참조하게 됩니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ThreadLocal.set(<span class="keyword">new</span> Looper());</div><div class="line"></div><div class="line"><span class="comment">// Looper 생성자</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="title">Looper</span><span class="params">(<span class="keyword">boolean</span> quitAllowed)</span> </span>&#123;</div><div class="line">    mQueue = <span class="keyword">new</span> MessageQueue(quitAllowed);</div><div class="line">    mThread = Thread.currentThread();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ThreadLocal 이란 각 Thread 별로 로컬 데이터를 저장하기 위한 자료구조입니다. ThreadLocal 의 <code>set(Looper looper)</code> 함수는 <code>Thread.currentThread()</code> 를 사용하여 현재 수행중인 Thread 객체를 가져와 Thread 의 <code>getMap()</code> 함수를 호출합니다. <code>getMap()</code> 을 사용하면 Thread 의 <code>ThreadLocalMap</code> 를 가져오게 되는데 이 객체에 key 값으로 Looper 의 ThreadLocal 객체 (static 으로 선언되어 있기에 Looper 클래스가 로드될때 같이 생성되는 객체이다. 즉, 최초의 스레드인 Main Thread 의 Looper 가 가지고 있는 ThreadLocal 이다) 를 설정하고 value 로 새로 생성된 Looper 객체를 저장함으로써 Thread 내부에 Map 형태로 Looper 객체를 저장합니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T value)</span> </span>&#123;</div><div class="line">    Thread t = Thread.currentThread();</div><div class="line">    ThreadLocalMap map = getMap(t);</div><div class="line">    <span class="keyword">if</span> (map != <span class="keyword">null</span>)</div><div class="line">        map.set(<span class="keyword">this</span>, value);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        createMap(t, value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>각 스레드는 멤버변수로 <code>ThreadLocalMap</code> 을 가집니다. 이것은 Map 구조로 <code>ThreadLocal</code> 객체와 데이터를 key-value 형태로 저장합니다.  Main Looper 의 ThreadLocal 을 사용하여 현재 Thread 의 ThreadLocalMap 에 데이터를 저장할 수도 있지만, 직접 ThreadLocal 객체를 생성하여 <code>set()</code> 을 호출함으로써 원하는 값을 저장할 수 있습니다. 즉, Looper 클래스는 ThreadLocal 을 사용하여 자신의 객체를 랩핑함으로써 각각의 스레드에 대해 다른 Looper 를 호출할 수 있도록 보장하며, 이것은 멀티스레드 환경에서 동기화 문제 안정적일 수 있습니다.</p>
+<h5 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h5><p>Thread 에서의 사용보다는 Class 에서 동기화를 보장하고 싶은 데이터를 위해 사용됩니다. (ex. Looper) Class 내부에 원하는 데이터를 ThreaLocal 을 통해 랩핑합니다. Thread 가 해당 데이터를 요청할때 (ex. Looper.myLooper()) <code>ThreadLocal.get()</code> 함수를 통해 해당 객체를 반환합니다. 데이터를 반환하기 전에 <code>ThreadLocal.set(value)</code> 를 통해 Thread 별 <code>ThreadLocalMap</code> 에 데이터를 복사합니다. (ex. Looper.prepare()) <code>get()</code> 함수 내부에서는 각 스레드의 <code>ThreadLocalMap</code> 에 ThreadLocal 객체를 key 로 저장한 데이터를 리턴함으로써 동기화 문제에 안전하게 작동합니다. 따라서 ThreadLocalMap 에 Class 의 ThreadLocal 객체와 복사한 데이터를 key-value 형태로 저장함으로써 ThreadLocal 별로 독립된 데이터를 사용할 수 있게 보장합니다.</p>
+<blockquote>
+<p><a href="http://itmining.tistory.com/5" target="_blank" rel="external">Thread, Handler, Looper 를 통한 백그라운드 처리</a></p>
+<p><a href="http://itmining.tistory.com/16" target="_blank" rel="external">Handler 사용법</a></p>
+<p><a href="http://techieme.in/explaining-the-threadlocal/" target="_blank" rel="external">Explaining the ThreadLocal</a></p>
+</blockquote>
+<h4 id="자바는-call-by-reference-인가-call-by-value-인가"><a href="#자바는-call-by-reference-인가-call-by-value-인가" class="headerlink" title="자바는 call by reference 인가 call by value 인가"></a>자바는 call by reference 인가 call by value 인가</h4><p>call by value 입니다. 자바는 기본형일 경우 값을 그대로 복사만 하여 명확한 call by value 를 보여주지만 자료형이 객체일 경우 그 객체의 주소값을 복사하는 형식으로 전달되기 때문에 call by reference 처럼 보이게 하는 call by value 방식을 사용합니다. 함수에서는 argument 를 통해 넘겨받은 객체에 접근하여 멤버변수 값을 바꿀 수도 있기에 call by reference 처럼 보이지만 argument 에 새로운 객체를 할당할 경우 그 주소값에 새로운 값이 할당되는 것이 아니라 아예 새로운 공간을 할당받아 객체를 생성한 후 argument 에 참조되는 구조입니다. 즉, argument 에서 이전 객체의 참조를 끊고 새로운 객체를 참조하는 방식으로 되기에 C 에서의 포인터와 확연히 다른 결과가 발생합니다. </p>
+<h4 id="화면이-회전하면-액티비티의-생명주기가-어떻게-되는가"><a href="#화면이-회전하면-액티비티의-생명주기가-어떻게-되는가" class="headerlink" title="화면이 회전하면 액티비티의 생명주기가 어떻게 되는가"></a>화면이 회전하면 액티비티의 생명주기가 어떻게 되는가</h4><p>화면이 회전하면 뷰의 크기를 재측정하고 다시 달라진 크기대로 새롭게 그려야됩니다. 일단 <code>onPause</code> 가 호출되고 <code>onStop</code> , <code>onDestroy</code> 가 진행된 후 다시 <code>onCreate</code>, <code>onStart</code>, <code>onResume</code> 순서로 진행됩니다. 따라서 현재 액티비티를 destroy 시키고 새로 만들기때문에 기존의 데이터는 사라지게 됩니다. <code>onDestroy</code> 가 호출되기 전에 액티비티는 <code>onSaceInstanceState</code> 를 호출하게 되는데 이때 저장되어야 할 데이터를 Bundle 에 저장해두었다가 다시 <code>onCreate</code> 가 호출되면 파라미터로 날아온 Bundle 에서 이전 데이터를 받아 복구할 수 있습니다.</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/a/13023121/8453903" target="_blank" rel="external">StackOverFlow - Save state of activity when orientation changes android</a></p>
+</blockquote>
+<h4 id="IntentService-는-무엇인가"><a href="#IntentService-는-무엇인가" class="headerlink" title="IntentService 는 무엇인가"></a>IntentService 는 무엇인가</h4><p>Service 의 서브 클래스로서 단일 스레드를 사용하여 요청을 하나씩 처리하는 특징을 가집니다. 만약 Service 에서 여러 요청을 동시에 처리할 필요가 없는 경우 IntentService 를 사용하는 것이 효율적입니다. 단순히 <code>onHandleIntent()</code> 함수를 구현함으로써 백그라운드 작업을 완성할 수 있습니다. 처음 시작될때 자동으로 Thread 가 생성되고 Handler 와 Looper 를 설정하기에 별도의 Thread 처리를 구현할 필요가 없으며 Thread 에 의해 처리되기에 긴 작업을 처리할 수 있습니다. 큐에 쌓인 모든 작업을 처리하면 스스로 종료되기에 <code>stopService()</code> 를 호출할 필요도 없습니다.</p>
+<blockquote>
+<p><a href="https://developer.android.com/guide/components/services.html?&amp;#ExtendingIntentService" target="_blank" rel="external">Android Developers - 서비스</a></p>
+<p><a href="http://hashcode.co.kr/questions/2485/service-vs-intentservice" target="_blank" rel="external">Hashcode - Service vs IntentService</a></p>
+</blockquote>
+<h4 id="IntentService-에-데이터는-어떻게-전달할까"><a href="#IntentService-에-데이터는-어떻게-전달할까" class="headerlink" title="IntentService 에 데이터는 어떻게 전달할까"></a>IntentService 에 데이터는 어떻게 전달할까</h4><p>Activity 에서 IntentService 로의 통신은 <code>Intent</code> 를 사용하면 됩니다. <code>startService()</code> 를 호출할때 원하는 정보를 Intent 에 담아 보내면 IntentService 에서는 <code>onHandleIntenet()</code> 를 통해 intent 에 담긴 정보를 꺼내와 작업을 처리할 수 있습니다. IntentService 내부에는 <code>ServiceHandler</code> 가 있는데 처음 Service 가 생성되면 Thread 와 함께 생성되는 객체입니다. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate();</div><div class="line">    HandlerThread thread = <span class="keyword">new</span> HandlerThread(<span class="string">"IntentService["</span> + mName + <span class="string">"]"</span>);</div><div class="line">    thread.start();</div><div class="line"></div><div class="line">    mServiceLooper = thread.getLooper();</div><div class="line">    mServiceHandler = <span class="keyword">new</span> ServiceHandler(mServiceLooper);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>이것은 Service 의 Thread 에서 사용되는 Handler 입니다. Service 에서 <code>onStart()</code> 가 호출되면 Handler 는 <code>sendMessage()</code> 함수에 Intent 를 파라미터로 넘겨 MessageQueue 에 쌓습니다. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">(@Nullable Intent intent, <span class="keyword">int</span> startId)</span> </span>&#123;</div><div class="line">    Message msg = mServiceHandler.obtainMessage();</div><div class="line">    msg.arg1 = startId;</div><div class="line">    msg.obj = intent;</div><div class="line">    mServiceHandler.sendMessage(msg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>나중에 Looper 가 MessageQueue 에서 Message 를 꺼내어 실행시킬때 Message 와 연결되어 있는 ServiceHandler 의 <code>handleMessage()</code> 가 호출되는데 여기서 <code>onHandleIntent()</code> 가 호출되는 구조입니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ServiceHandler</span><span class="params">(Looper looper)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(looper);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">        onHandleIntent((Intent)msg.obj);</div><div class="line">        stopSelf(msg.arg1);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> IntentService 에서 Activity 로의 통신은 콜백함수를 사용합니다. IntentService 를 생성할때 콜백함수를 같이 넘겨서 처리가 완료되면 화면을 갱신하거나 결과값을 전달 받는 등의 이벤트 처리를 구현할 수 있습니다.</p>
+<h4 id="PendingIntent-가-무엇인가"><a href="#PendingIntent-가-무엇인가" class="headerlink" title="PendingIntent 가 무엇인가"></a>PendingIntent 가 무엇인가</h4><p>PendingIntent 는 intent 를 감싸서 다른 어플리케이션에 전달할때 바로 intent 의 작업을 실행시키는 것이 아니라 특정 시점에 작업을 실행하는 것 역할을 합니다. 해당 대표적으로 화면 상단의 상태바에서 Notification 을 사용하는 경우 PendingIntent 를 사용합니다. 예를 들어 노래를 재생하는 중이고 이것이 상태바에 Notification 으로 보여질때 사용자가 이 Noti 를 클릭하면 Notification 이전에 전달받은 PendingIntent 를 실행합니다. PendingIntent 가 <code>getActivity()</code> 에 의해 생성된 것이며 감싸고 있는 intent 또한 특정 화면을 시작하면 intent 라면 이것이 그대로 실행되어 노래화면이 뜨는 것이 가능하게 됩니다. 이때 주의할 것은 Activity 는 새로운 태스크를 생성하여 그곳에 쌓이게 됩니다. 마치 intent 의 flag 가 <code>NEW_TASK</code> 로 설정된 것처럼 실행되기 때문에 유의해야 합니다. 하나의 Activity 만 생성되도록 보장하기 위해선 메니페스트에 <code>android:launchMode=&quot;singleTop&quot;</code> 를 설정해주어야 합니다.</p>
+<blockquote>
+<p><a href="http://techlog.gurucat.net/80" target="_blank" rel="external">펜딩인텐드(Pending Intent)</a></p>
+<p><a href="http://www.androidside.com/bbs/board.php?bo_table=B49&amp;wr_id=36989" target="_blank" rel="external">Android Side - intent 와 pendingIntent 의 차이점이 궁금합니다!!</a></p>
+<p><a href="http://aroundck.tistory.com/63" target="_blank" rel="external">Manifest Activity 태그의 launchMode 에 대해 들어보셨나요?</a></p>
+</blockquote>
+<h4 id="요즘-AAC-가-나왓는데-그-중-ViewModel-과-lifedata-가-무엇인가"><a href="#요즘-AAC-가-나왓는데-그-중-ViewModel-과-lifedata-가-무엇인가" class="headerlink" title="요즘 AAC 가 나왓는데 그 중 ViewModel 과 lifedata 가 무엇인가"></a>요즘 AAC 가 나왓는데 그 중 ViewModel 과 lifedata 가 무엇인가</h4><h4 id="디컴파일에-대한-보안문제-때문에-어떠한-조치들이-있는데-무엇인지-알고-있는가"><a href="#디컴파일에-대한-보안문제-때문에-어떠한-조치들이-있는데-무엇인지-알고-있는가" class="headerlink" title="디컴파일에 대한 보안문제 때문에 어떠한 조치들이 있는데 무엇인지 알고 있는가"></a>디컴파일에 대한 보안문제 때문에 어떠한 조치들이 있는데 무엇인지 알고 있는가</h4><h4 id="proguard-가-무엇인가"><a href="#proguard-가-무엇인가" class="headerlink" title="proguard 가 무엇인가"></a>proguard 가 무엇인가</h4><p>프로가드란 apk 파일이 디컴파일 되었을때 로그인 구현 방법같은 보안에 중요한 부분이 노출될 수 있고 중요한 비즈니스 로직을 외부에 쉽게 노출되는 문제에 대비하기 위해 코드를 난독화하는 과정입니다. 또한 컴파일 이전에 사용하지 않는 코드나 메서드를 제거함으로써 멀티텍스를 사용하지 않아도 될 만큼 어플리케이션의 크기를 줄일 수 있습니다. 코드양과 라이브러리 사용이 많아지면 컴파일시 덱스파일의 크기가 커지게 되는데 하나의 덱스 파일에서 참조 가능한 메소드가 65536 개 이기에 컴파일시 에러가 발생할 수 있습니다. 따라서 앱의 규모가 커진다면 멀티덱스 사용이 불가피해집니다. 멀티덱스는 파일을 여러 덱스 파일로 나누어 생성하기 때문에 문제를 해결할 수 있지만 여전히 앱의 용량은 커지는 단점이 있습니다.</p>
+<blockquote>
+<p><a href="https://medium.com/ics-lab/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%B1-%EB%82%9C%EB%8F%85%ED%99%94-proguard-dexguard-%EB%A5%BC-%ED%95%B4%EB%B3%B4%EC%9E%90-1-%ED%94%84%EB%A1%9C%EA%B0%80%EB%93%9C-%ED%8E%B8-799999a43c4d" target="_blank" rel="external">안드로이드 앱 난독화를 해보자! 1. 프로가드편</a></p>
+<p><a href="http://www.androidhuman.com/lecture/proguard/2017/02/16/reduce-method-count-with-proguard/" target="_blank" rel="external">멀티덱스, 섣불리 적용하지 마세요! 프로가드로 메소드 카운트 줄이는 방법</a></p>
+</blockquote>
+<h4 id="로그인이라든가-하는-부분에-보안이-중요하기에-우리들은-프로가드를-필수적으로-사용한다-이런-이슈들을-이해하고-프로가드를-사용해-본-적이-있는가"><a href="#로그인이라든가-하는-부분에-보안이-중요하기에-우리들은-프로가드를-필수적으로-사용한다-이런-이슈들을-이해하고-프로가드를-사용해-본-적이-있는가" class="headerlink" title="로그인이라든가 하는 부분에 보안이 중요하기에 우리들은 프로가드를 필수적으로 사용한다. 이런 이슈들을 이해하고 프로가드를 사용해 본 적이 있는가"></a>로그인이라든가 하는 부분에 보안이 중요하기에 우리들은 프로가드를 필수적으로 사용한다. 이런 이슈들을 이해하고 프로가드를 사용해 본 적이 있는가</h4><h4 id="캐시구현은-이미지-처리하는-라이브러리를-사용하였는가"><a href="#캐시구현은-이미지-처리하는-라이브러리를-사용하였는가" class="headerlink" title="캐시구현은 이미지 처리하는 라이브러리를 사용하였는가"></a>캐시구현은 이미지 처리하는 라이브러리를 사용하였는가</h4><blockquote>
+<p> <a href="https://bumptech.github.io/glide/doc/caching.html" target="_blank" rel="external">Glide Caching</a></p>
+<p><a href="https://github.com/bumptech/glide/issues/700" target="_blank" rel="external">Glide can not display very long image</a></p>
+</blockquote>
+<h4 id="라이브러리를-안-쓰고-직접-구현하는-것도-좋은데-그럼-일정에-대한-문제가-생기지-않는가-일정은-어떻게-잡았나"><a href="#라이브러리를-안-쓰고-직접-구현하는-것도-좋은데-그럼-일정에-대한-문제가-생기지-않는가-일정은-어떻게-잡았나" class="headerlink" title="라이브러리를 안 쓰고 직접 구현하는 것도 좋은데 그럼 일정에 대한 문제가 생기지 않는가 일정은 어떻게 잡았나"></a>라이브러리를 안 쓰고 직접 구현하는 것도 좋은데 그럼 일정에 대한 문제가 생기지 않는가 일정은 어떻게 잡았나</h4><h4 id="inBitmap-은-사용하지-않았는가-비트맵을-캐시하는-과정이-inBitmap-을-사용하면-해결될거-같다는-식으로-말함"><a href="#inBitmap-은-사용하지-않았는가-비트맵을-캐시하는-과정이-inBitmap-을-사용하면-해결될거-같다는-식으로-말함" class="headerlink" title="inBitmap 은 사용하지 않았는가 (비트맵을 캐시하는 과정이 inBitmap 을 사용하면 해결될거 같다는 식으로 말함)"></a>inBitmap 은 사용하지 않았는가 (비트맵을 캐시하는 과정이 inBitmap 을 사용하면 해결될거 같다는 식으로 말함)</h4><h4 id="안드로이드에서-Task-와-Process-의-차이점"><a href="#안드로이드에서-Task-와-Process-의-차이점" class="headerlink" title="안드로이드에서 Task 와 Process 의 차이점"></a>안드로이드에서 Task 와 Process 의 차이점</h4><p>어플리케이션 컴포넌트가 처음 시작될때 실행 중인 다른 컴포넌트가 없으면 안드로이드 시스템은 프로세스를 새로 생성시킵니다. 기본적으로 어플리케이션의 컴포넌트들은 같은 프로세스의 기본 스레드에서 실행됩니다. 이후의 컴포넌트들이 시작할때는 이미 생성된 프로세스 내에서 시작되며 컴포넌트별로 별도의 프로세스에서 실행되도록 할 수도 있고 어느 프로세스에서든 추가적인 스레드를 생성하여 작업할 수 있습니다. 메니페스트 파일에서 <code>android:process</code> 특성을 설정함으로써 다른 프로세스에 해당 컴포넌트를 실행시킬 수 있습니다. 안드로이드 시스템에서 메모리가 부족할 경우 우선순위가 낮은 프로세스부터 종료시킵니다. 우선순위는 Foreground, Visible, Service, Background, Cached 프로세스 순입니다.  눈에 보이는 프로세스는 Foreground 와 Visible 프로세스이며 Visible 은 다이얼로그가 뜨는 경우 뒤에 있는 액티비티가 가려지지만 사용자에게 보이는 경우에 해당합니다. Service 는 사용자가 볼 수는 없지만 프로세스에 필요한 작업은 진행하기에 그 다음 우선순위를 가지며 Background 는 뒤로 밀려난 프로세스이기에 종료될 수 있습니다. 마지막 Cached 프로세스는 컴포넌트가 없는 빈 프로세스이지만 다음에 실행할때 로드 시간을 절약하기 위해 캐시된 상태입니다. Task 는 각 어플리케이션마다 사용하는 Activity 들을 Stack 구조로 저장 및 관리하는 컬렉션입니다. 따라서 사용자가 화면의 전환 흐름을 자연스럽게 경험하도록 보장합니다. 또한 Task 는 다른 어플리케이션이나 프로세스에 속하는 Activity 를 같은 Task 에 저장시킴으로서 사용자로 하여금 하나의 어플리케이션에서 작동하는 듯한 경험을 하도록 합니다. 단말기에서 사용중인 어플리케이션 리스트를 보는 것이 Task 단위로 보여지는 것입니다. 하지만 실질적으로 Activity 는 다른 프로세스 상에서 돌아가는 컴포넌트이며 프로세스간 통신을 통해 정보를 주고 받는 것입니다.</p>
+<blockquote>
+<p><a href="https://developer.android.com/guide/components/processes-and-threads.html?hl=ko" target="_blank" rel="external">Android Developers - 프로세스 및 스레드</a></p>
+<p><a href="http://apphappy.tistory.com/62" target="_blank" rel="external">안드로이드에서 프로세스란?</a></p>
+<p><a href="https://m.blog.naver.com/PostView.nhn?blogId=bl2019&amp;logNo=10186573801&amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="external">android process 와 task 에 대한 오해와 진실</a></p>
+</blockquote>
+<h4 id="A-라는-앱에서-B-앱의-액티비티을-부를-수-있는데-그때는-하나의-태스크인가-별도의-태스크인가"><a href="#A-라는-앱에서-B-앱의-액티비티을-부를-수-있는데-그때는-하나의-태스크인가-별도의-태스크인가" class="headerlink" title="A 라는 앱에서 B 앱의 액티비티을 부를 수 있는데 그때는 하나의 태스크인가 별도의 태스크인가"></a>A 라는 앱에서 B 앱의 액티비티을 부를 수 있는데 그때는 하나의 태스크인가 별도의 태스크인가</h4><p>Task 에는 해당 어플리케이션에 속한 컴포넌트 뿐만 아니라 다른 어플리케이션 컴포넌트도 쌓일 수 있습니다. 다른 어플리케이션의 컴포넌트를 실행하는 방법으로 <code>PackageManager</code> 의 <code>getLaunchIntentForPackage()</code> 가 있고 Intent 에 <code>setComponent()</code> 을 사용하는 방법이 있는데 전자의 경우 항상 새로운 Task 를 생성하여 그곳에서 컴포넌트를 실행시키며 후자의 경우 현재의 Task 에서 컴포넌트를 실행시키게 됩니다.</p>
+<blockquote>
+<p><a href="https://www.androidpub.com/2068035" target="_blank" rel="external">Android Pub - intent 로 다른 앱 실행시 기존 앱으로의 복귀 문제</a></p>
+<p><a href="http://devbible.tistory.com/142" target="_blank" rel="external">타 어플의 Activity 실행</a></p>
+<p><a href="https://www.androidpub.com/1131059" target="_blank" rel="external">Android Pub - 다른 어플 실행 할때 디폴트 activitu 알수 없다면</a></p>
+<p><a href="https://developer.android.com/training/basics/intents/filters.html?hl=ko" target="_blank" rel="external">Android Developers - 다른 앱이 자신의 액티비티를 시작하도록 허용</a></p>
+</blockquote>
+<h4 id="네트워크-통신에서-사용했던-라이브러리는-무엇이-있는가-레트로핏-사용햇다고-하니-랩퍼형태의-클래스이지-통신을-하는-라이브러리는-아니라고-함"><a href="#네트워크-통신에서-사용했던-라이브러리는-무엇이-있는가-레트로핏-사용햇다고-하니-랩퍼형태의-클래스이지-통신을-하는-라이브러리는-아니라고-함" class="headerlink" title="네트워크 통신에서 사용했던 라이브러리는 무엇이 있는가 (레트로핏 사용햇다고 하니 랩퍼형태의 클래스이지 통신을 하는 라이브러리는 아니라고 함)"></a>네트워크 통신에서 사용했던 라이브러리는 무엇이 있는가 (레트로핏 사용햇다고 하니 랩퍼형태의 클래스이지 통신을 하는 라이브러리는 아니라고 함)</h4><h4 id="Okhttp3-사용했으면-인터셉터가-있는데-무엇인가"><a href="#Okhttp3-사용했으면-인터셉터가-있는데-무엇인가" class="headerlink" title="Okhttp3 사용했으면 인터셉터가 있는데 무엇인가"></a>Okhttp3 사용했으면 인터셉터가 있는데 무엇인가</h4><h4 id="Okhttp-에서-네트워크-옵션을-설정하는-부분을-보면-어플리케이션-인터셉터가-있고-네트워크-인터셉터가-있는데-이것에-대해-아는가"><a href="#Okhttp-에서-네트워크-옵션을-설정하는-부분을-보면-어플리케이션-인터셉터가-있고-네트워크-인터셉터가-있는데-이것에-대해-아는가" class="headerlink" title="Okhttp 에서 네트워크 옵션을 설정하는 부분을 보면 어플리케이션 인터셉터가 있고 네트워크 인터셉터가 있는데 이것에 대해 아는가"></a>Okhttp 에서 네트워크 옵션을 설정하는 부분을 보면 어플리케이션 인터셉터가 있고 네트워크 인터셉터가 있는데 이것에 대해 아는가</h4><h4 id="ScrollView-를-직접-만든다면-이벤트-처리부터-스크롤-효과까지-어떻게-구현할-것인가-또한-fling-은-어떻게-구현할-것인가-터치-이벤트를-받으면-이것이-스크롤인지를-판단하는-구현이-들어갈-것이고-제스쳐까지-만든-후-화면에-스크롤-효과를-구현해야-될-것이다-이것을-어떻게-구현할-것인지-설명해보라함"><a href="#ScrollView-를-직접-만든다면-이벤트-처리부터-스크롤-효과까지-어떻게-구현할-것인가-또한-fling-은-어떻게-구현할-것인가-터치-이벤트를-받으면-이것이-스크롤인지를-판단하는-구현이-들어갈-것이고-제스쳐까지-만든-후-화면에-스크롤-효과를-구현해야-될-것이다-이것을-어떻게-구현할-것인지-설명해보라함" class="headerlink" title="ScrollView 를 직접 만든다면 이벤트 처리부터 스크롤 효과까지 어떻게 구현할 것인가, 또한 fling 은 어떻게 구현할 것인가, (터치 이벤트를 받으면 이것이 스크롤인지를 판단하는 구현이 들어갈 것이고, 제스쳐까지 만든 후 화면에 스크롤 효과를 구현해야 될 것이다 이것을 어떻게 구현할 것인지 설명해보라함)"></a>ScrollView 를 직접 만든다면 이벤트 처리부터 스크롤 효과까지 어떻게 구현할 것인가, 또한 fling 은 어떻게 구현할 것인가, (터치 이벤트를 받으면 이것이 스크롤인지를 판단하는 구현이 들어갈 것이고, 제스쳐까지 만든 후 화면에 스크롤 효과를 구현해야 될 것이다 이것을 어떻게 구현할 것인지 설명해보라함)</h4><h4 id="잠금화면을-만들때-액티비티를-만드는-경우도-있지만-윈도우에-직접-그리는-방식도-있던데-그것에-대해-아는-것이-있는가"><a href="#잠금화면을-만들때-액티비티를-만드는-경우도-있지만-윈도우에-직접-그리는-방식도-있던데-그것에-대해-아는-것이-있는가" class="headerlink" title="잠금화면을 만들때 액티비티를 만드는 경우도 있지만 윈도우에 직접 그리는 방식도 있던데 그것에 대해 아는 것이 있는가"></a>잠금화면을 만들때 액티비티를 만드는 경우도 있지만 윈도우에 직접 그리는 방식도 있던데 그것에 대해 아는 것이 있는가</h4><h4 id="메모리-관련해서-트러블-슈팅이-많은-것-같은데-어떤-방식으로-해결했는지-말해보아라-메모리가-부족하다는-것을-어떤-방식으로-확인하고-측정을-어떻게-했으며-죽지-않을때까지-해본-건지-말해보아라-정확한-원인-분석을-해봣는가를-원했음-프로파일링이나-힙덤프를-까보았는지를-궁금해함"><a href="#메모리-관련해서-트러블-슈팅이-많은-것-같은데-어떤-방식으로-해결했는지-말해보아라-메모리가-부족하다는-것을-어떤-방식으로-확인하고-측정을-어떻게-했으며-죽지-않을때까지-해본-건지-말해보아라-정확한-원인-분석을-해봣는가를-원했음-프로파일링이나-힙덤프를-까보았는지를-궁금해함" class="headerlink" title="메모리 관련해서 트러블 슈팅이 많은 것 같은데 어떤 방식으로 해결했는지 말해보아라, 메모리가 부족하다는 것을 어떤 방식으로 확인하고 측정을 어떻게 했으며 죽지 않을때까지 해본 건지 말해보아라(정확한 원인 분석을 해봣는가를 원했음, 프로파일링이나 힙덤프를 까보았는지를 궁금해함)"></a>메모리 관련해서 트러블 슈팅이 많은 것 같은데 어떤 방식으로 해결했는지 말해보아라, 메모리가 부족하다는 것을 어떤 방식으로 확인하고 측정을 어떻게 했으며 죽지 않을때까지 해본 건지 말해보아라(정확한 원인 분석을 해봣는가를 원했음, 프로파일링이나 힙덤프를 까보았는지를 궁금해함)</h4><h4 id="MVP-와-MVVM-에-대해-가장-큰-차이에-대해-간단히-설명"><a href="#MVP-와-MVVM-에-대해-가장-큰-차이에-대해-간단히-설명" class="headerlink" title="MVP 와 MVVM 에 대해 가장 큰 차이에 대해 간단히 설명"></a>MVP 와 MVVM 에 대해 가장 큰 차이에 대해 간단히 설명</h4><h4 id="안드로이드는-직렬화-중-Parcelable-를-사용하는데-Serializable-과의-차이와-왜-안드로이드는-Parcelable을-사용하는가"><a href="#안드로이드는-직렬화-중-Parcelable-를-사용하는데-Serializable-과의-차이와-왜-안드로이드는-Parcelable을-사용하는가" class="headerlink" title="안드로이드는 직렬화 중 Parcelable 를 사용하는데 Serializable 과의 차이와 왜 안드로이드는 Parcelable을 사용하는가"></a>안드로이드는 직렬화 중 Parcelable 를 사용하는데 Serializable 과의 차이와 왜 안드로이드는 Parcelable을 사용하는가</h4><p>안드로이드에서 객체를 직렬화하는 방법으로 Serializable 과 Parcelable 이 있습니다. Serializable 은 오버라이딩 없이 Serializable 을 impements 해줌으로써 JVM 이 직렬화가 가능하다는 정보만 알려주면 되기에 매우 간단히 직렬화시킬 수 있습니다. 하지만 직렬화 과정에 reflection 을 사용하기 때문에 속도가 매우 느리다는 단점이 있습니다. 반면 Parcelable 은 implements 시 <code>describeContent()</code> 와 <code>writeToParcel()</code> 함수를 오버라이딩해야합니다. <code>describeContent()</code> 함수를 통해 객체의 내용을 구현하고 <code>writeToParcel()</code> 함수를 통해 직렬화시 Container 역할을 하는 Parcel 객체 안에 데이터를 넣을 수 있게 합니다. 또한 <code>Creator</code> 라는 정적필드를 반드시 선언함과 동시에 초기화 해주어야 합니다. Creator 객체는 역직렬화시 사용되어집니다. Creator 구현에는 <code>createFromParcel()</code> 과 <code>newArray()</code> 함수를 오버라이딩해야합니다. <code>createFromParcel()</code> 함수는 parcel 된 데이터를 다시 원래 객체로 변환시키는 작업을 하고 <code>newArray()</code> 함수는 전달하는 객체가 배열일 경우 배열을 다시 할당하기 위해 사용됩니다.</p>
+<blockquote>
+<p><a href="https://medium.com/udacity-android-nanodegree/android-parcelable-vs-serializable-f2d7d2f4a2a" target="_blank" rel="external">Medium - Parcelable vs Serializable</a></p>
+</blockquote>
+<h4 id="안드로이드의-자이고트와-루퍼에-대해-설명해보아라"><a href="#안드로이드의-자이고트와-루퍼에-대해-설명해보아라" class="headerlink" title="안드로이드의 자이고트와 루퍼에 대해 설명해보아라"></a>안드로이드의 자이고트와 루퍼에 대해 설명해보아라</h4><p>zygote 는 어플리케이션을 빨리 구동하기 위해 미리 fork 되어 있는 프로세스입니다. 새로운 어플리케이션이 실행될때 zygote 프로세스와 같이 결합하여 좀 더 빠르게 구동되게 됩니다. 시스템에서 <code>exec()</code> 을 통해 어플리케이션을 실행하기 전까지는 중립된 상태를 유지하며 어플리케이션이 사용하는 공통적인 라이브러리를 탑재한 상태로 대비하고 있습니다. 만약 zygote 가 없다면 어플리케이션이 구동될때 필요한 모든 클래스와 리소스를 찾아야 하기 때문에 delay 가 발생할 것입니다. zygote에 의해 자바 프로세스가 포크되면서 <code>ZygoteInit.main()</code> 가 실행되고 여기서 <code>ActivityThread.main()</code> 을 호출합니다. <code>ActivityThread.main()</code> 은 먼저 <code>Looper.prepareMainLooper()</code> 를 호출하여 main 쓰레드를 위한 메인 메시지 루프를 초기화합니다. <code>ActivityThread</code> 객체가 생성되고, ActivityThread 는 <code>ApplicationThread</code> 객체를 생성하는데, ApplicationThread는 system_server 프로세스의 ActivityManagerService 서비스와 상호작용하기 위한 IBinder 객체로서 작동합니다. 이 시점에 프로세스는 system_server 프로세스로부터의 IPC 콜을 기다릴 뿐 다른 일은 하지 않습니다. Application 과 ApplicationContext 객체도 아직 생성되지 않은 상태이며 이들 객체는 애플리케이션 프로세스가 실제로 어떤 일을 할 때 생성됩니다.(즉, 액티비티를 시작하거나 인텐트를 수신하거나 서비스를 시작하는 등의 작업) 이제 애플리케이션에서 실행해야할 액티비티가 있다면 ActivityManagerService가 RPC 호출을 통해 애플리케이션 프로세스의 <code>ApplicationThread.scheduleLaunchActivity()</code> 를 실행합니다. ApplicationThread 는 ActivityThread 에 메시지를 전달하여 액티비티를 시작하도록 요청하고 ActivityThread 는 Application 과 ApplicationContext 객체를 생성합니다. 그리고 Instrumentation 을 이용하여 마침내 액티비티 자바 객체를 생성하고 액티비티의 onCreate() 를 호출합니다. Looper 는 MessageQueue 에 쌓인 여러 스레드의 요청을 순차적으로 처리하는 클래스입니다. 안드로이드에서 여러 스레드에서 동시에 작업을 처리할 경우 동기화 문제에 치명적인 상황이 발생하는데 대표적으로 메인 스레드에서 UI 를 그리는 일이 여기에 속합니다. 따라서 안드로이드에서는 하나의 스레드가 작업을 전담하기 위해 Looper, MessageQueue, Handler 를 도입하여 순차적인 처리를 보장하도록 하였습니다.</p>
+<blockquote>
+<p><a href="http://bulldozer121.tistory.com/18" target="_blank" rel="external">안드로이드의 프로세스 - JNI &amp; zygote process</a></p>
+<p><a href="http://ecogeo.tistory.com/253" target="_blank" rel="external">자이고트</a></p>
+</blockquote>
+<h4 id="SparseArray-를-설명해보아라-속도가-더-빠르다는-이유로-사용하는데-왜-더-빠르고-더-빠른-상황은-어떤-상황이-있겠는가"><a href="#SparseArray-를-설명해보아라-속도가-더-빠르다는-이유로-사용하는데-왜-더-빠르고-더-빠른-상황은-어떤-상황이-있겠는가" class="headerlink" title="SparseArray 를 설명해보아라, 속도가 더 빠르다는 이유로 사용하는데 왜 더 빠르고, 더 빠른 상황은 어떤 상황이 있겠는가"></a>SparseArray 를 설명해보아라, 속도가 더 빠르다는 이유로 사용하는데 왜 더 빠르고, 더 빠른 상황은 어떤 상황이 있겠는가</h4><h4 id="어떤-앱에서-다른-부분은-다-괜찮은데-화면에-랜더링이-느리다는-문제가-있다-이것을-어떻게-해결할-것인가-랜더링에-문제가-생기면-view-hierarchy-에-과도한-뷰가-있지-않은지-확인한다-flexboxlayout-이나-constraintlayout-을-사용하여-뷰-최적화를-고려하거나-불필요한-오버드로우가-발생하지-않앗는지-검토해야된다고-하심"><a href="#어떤-앱에서-다른-부분은-다-괜찮은데-화면에-랜더링이-느리다는-문제가-있다-이것을-어떻게-해결할-것인가-랜더링에-문제가-생기면-view-hierarchy-에-과도한-뷰가-있지-않은지-확인한다-flexboxlayout-이나-constraintlayout-을-사용하여-뷰-최적화를-고려하거나-불필요한-오버드로우가-발생하지-않앗는지-검토해야된다고-하심" class="headerlink" title="어떤 앱에서 다른 부분은 다 괜찮은데 화면에 랜더링이 느리다는 문제가 있다. 이것을 어떻게 해결할 것인가(랜더링에 문제가 생기면 view hierarchy 에 과도한 뷰가 있지 않은지 확인한다. flexboxlayout 이나 constraintlayout 을 사용하여 뷰 최적화를 고려하거나 불필요한 오버드로우가 발생하지 않앗는지 검토해야된다고 하심)"></a>어떤 앱에서 다른 부분은 다 괜찮은데 화면에 랜더링이 느리다는 문제가 있다. 이것을 어떻게 해결할 것인가(랜더링에 문제가 생기면 view hierarchy 에 과도한 뷰가 있지 않은지 확인한다. flexboxlayout 이나 constraintlayout 을 사용하여 뷰 최적화를 고려하거나 불필요한 오버드로우가 발생하지 않앗는지 검토해야된다고 하심)</h4><p>기본적으로 View 의 움직임이 어색하거나 스크롤이 버벅거리거나 랜더링이 느린 경우는 뷰를 그리는 속도가 16ms 보다 오래걸리는 현상입니다. 초당 60프레임의 속도로 화면을 그려주어야 사람의 시각에 어색함이 없이 보이는데 그리는 시간이 이보다 오래 걸릴 경우 버벅이는 문제가 발생할 수 있습니다. 따라서 랜더링이 느리다면 2가지를 의심해볼 것입니다. 첫 번째로 View Hierarchy 가 너무 많은지 의심해 볼 것입니다. View 는 그려기지 전에 Mesure, Layout. Draw 3단계를 계층적으로 실행합니다. 만약 계층이 매우 길고 복잡하다면 당연히 View 가 그려지는 시간 또한 오래 걸릴 것이기 때문입니다. 계층을 줄이려 <code>ConstraintLayout</code> 과 <code>FlexboxLayout</code> 를 적극 사용할 것입니다. 두 번째로 <code>onDraw()</code> 에서 오버드로우 현상이 일어나는지 확인할 것입니다.<code>onDraw()</code> 함수 안에서 객체생성을 하였는지, 오래 걸리는 작업을 실행하지 않는s지 확인하여 문제가 되는 로직을 수정하거나 제거 할 것입니다. </p>
+<h5 id="ConstraintLayout"><a href="#ConstraintLayout" class="headerlink" title="ConstraintLayout"></a>ConstraintLayout</h5><p>ConstraintLayout 은 뷰의 상하좌우를 주변 또는 부모 뷰와 연관을 지어 위치시킬 수 있습니다. bias 를 통해 비율적으로 배치시킬 수도 있고, chain 을 사용하여 마치 그룹화한 것처럼 사용도 가능합니다. 또한 ratio 를 사용하여 너비와 높이를 비율대로 설정할 수도 있는 등 매우 유연한 배치가 가능합니다.  ConstraintLayout 의 가장 큰 장점은 View Hierarchy 를 수평적으로 평평하게 만듭니다. 최대 8 계층으로 구성되어 있는 RelativeLayout 구조를 하나의 계층으로 줄일 수 있는 효과를 볼 수 있습니다.</p>
+<h5 id="FlexBoxLayout"><a href="#FlexBoxLayout" class="headerlink" title="FlexBoxLayout"></a>FlexBoxLayout</h5><p>태그와 같은 항목이 하나의 뷰 안에 일렬로 즐비할 경우 한 줄이 가득 차면 자동으로 다음 줄로 View 를 정렬시키는 기능이 필요할때 사용할 수 있는 Layout 입니다. FlexBoxLayout 은 부모 레이아웃의 너비에 따라 자식 뷰를 여러 행에 걸쳐 동적으로 맞추는 기능을 제공합니다. 기존에는 LinearLayout 을 통해 구현가능하긴 하지만 ScrollView 와 같이 사용하면서 View 의 너비를 일일이 계산하여 다음 행으로 배치시키는 코드를 직접 구현하는 방식으로 커스텀을 해야했습니다. FlexBoxLayout 을 사용하면 이러한 작업을 자동으로 처리해주기에 잘못된 구현으로 인해 오버헤드가 발생하는 문제를 방지할 수 있습니다. </p>
+<blockquote>
+<p><a href="https://academy.realm.io/kr/posts/exploring-new-android-layouts/" target="_blank" rel="external">Realm - Constraint Layout</a></p>
+</blockquote>
+<h4 id="Queue-2개로-Stack-구현"><a href="#Queue-2개로-Stack-구현" class="headerlink" title="Queue 2개로 Stack 구현"></a>Queue 2개로 Stack 구현</h4><h4 id="임시변수-안-쓰고-값-바꾸기"><a href="#임시변수-안-쓰고-값-바꾸기" class="headerlink" title="임시변수 안 쓰고 값 바꾸기"></a>임시변수 안 쓰고 값 바꾸기</h4><h4 id="병합정렬-구현하기-Stack-써서-구현해보기"><a href="#병합정렬-구현하기-Stack-써서-구현해보기" class="headerlink" title="병합정렬 구현하기, Stack 써서 구현해보기"></a>병합정렬 구현하기, Stack 써서 구현해보기</h4><h4 id="퀵-정렬-구현하기-Stack-써서-구현하기"><a href="#퀵-정렬-구현하기-Stack-써서-구현하기" class="headerlink" title="퀵 정렬 구현하기, Stack 써서 구현하기"></a>퀵 정렬 구현하기, Stack 써서 구현하기</h4></section>
+    <!-- Tags START -->
+    
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/04/05/node.js 내부구조/">
+        <span class="nav-arrow">← </span>
+        
+          node.js 내부구조
+        
+      </a>
+    
+    
+  </div>
+
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          후원
+        <span class="money-code">
+          <span class="kakaopay-code">
+            <div class="code-image"></div>
+          </span>
+        </span>
+        </div>
+      <p class="notice">이 포스트가 도움이 되었다고 생각하시면, 위의 버튼을 클릭하여 후원해주세요.</p>
+      </div>
+    
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+      <p class="notice">이 포스트를 공유하려면 QR 코드를 스캔하세요.</p>
+      </div>
+    
+    
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#density-별로-리사이징한다고-했는데-density-값을-어떻게-정하였는가"><span class="toc-nav-text">density 별로 리사이징한다고 했는데 density 값을 어떻게 정하였는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#이미지뷰에서-scale-을-조정할-수-있는데-왜-비트맵을-직접-조정햇나"><span class="toc-nav-text">이미지뷰에서 scale 을 조정할 수 있는데 왜 비트맵을 직접 조정햇나</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#사용했던-threadpool-설명해봐라-ThreadPool-사이즈는-몇으로-설정햇나-우선순위는-뭐로-설정햇나-다른곳에서도-다-스레드풀을-사용할수도-잇기때문에-풀사이즈-설정이-중요하다-그리고-우선순위도-너무-낮으면-다른-스레드풀에게-밀리므로-우선순위-설정도-중요하다"><span class="toc-nav-text">사용했던 threadpool 설명해봐라. ThreadPool 사이즈는 몇으로 설정햇나, 우선순위는 뭐로 설정햇나, 다른곳에서도 다 스레드풀을 사용할수도 잇기때문에 풀사이즈 설정이 중요하다. 그리고 우선순위도 너무 낮으면 다른 스레드풀에게 밀리므로 우선순위 설정도 중요하다.</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#리스트뷰를-안-쓰고-스크롤뷰를-사용한-이유"><span class="toc-nav-text">리스트뷰를 안 쓰고 스크롤뷰를 사용한 이유</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#WeakReference-에-대해-설명해보아라"><span class="toc-nav-text">WeakReference 에 대해 설명해보아라</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#서비스와-액티비티와-통신할때-브로드캐스트리시버-외의-방법으로-통신할-수-없는가"><span class="toc-nav-text">서비스와 액티비티와 통신할때 브로드캐스트리시버 외의 방법으로 통신할 수 없는가</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#AIDL"><span class="toc-nav-text">AIDL</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Messenger"><span class="toc-nav-text">Messenger</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Looper-와-Thread-MessageQueue-그리고-Handler"><span class="toc-nav-text">Looper 와 Thread, MessageQueue 그리고 Handler</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ThreadLocal"><span class="toc-nav-text">ThreadLocal</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#자바는-call-by-reference-인가-call-by-value-인가"><span class="toc-nav-text">자바는 call by reference 인가 call by value 인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#화면이-회전하면-액티비티의-생명주기가-어떻게-되는가"><span class="toc-nav-text">화면이 회전하면 액티비티의 생명주기가 어떻게 되는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IntentService-는-무엇인가"><span class="toc-nav-text">IntentService 는 무엇인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IntentService-에-데이터는-어떻게-전달할까"><span class="toc-nav-text">IntentService 에 데이터는 어떻게 전달할까</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#PendingIntent-가-무엇인가"><span class="toc-nav-text">PendingIntent 가 무엇인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#요즘-AAC-가-나왓는데-그-중-ViewModel-과-lifedata-가-무엇인가"><span class="toc-nav-text">요즘 AAC 가 나왓는데 그 중 ViewModel 과 lifedata 가 무엇인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#디컴파일에-대한-보안문제-때문에-어떠한-조치들이-있는데-무엇인지-알고-있는가"><span class="toc-nav-text">디컴파일에 대한 보안문제 때문에 어떠한 조치들이 있는데 무엇인지 알고 있는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#proguard-가-무엇인가"><span class="toc-nav-text">proguard 가 무엇인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#로그인이라든가-하는-부분에-보안이-중요하기에-우리들은-프로가드를-필수적으로-사용한다-이런-이슈들을-이해하고-프로가드를-사용해-본-적이-있는가"><span class="toc-nav-text">로그인이라든가 하는 부분에 보안이 중요하기에 우리들은 프로가드를 필수적으로 사용한다. 이런 이슈들을 이해하고 프로가드를 사용해 본 적이 있는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#캐시구현은-이미지-처리하는-라이브러리를-사용하였는가"><span class="toc-nav-text">캐시구현은 이미지 처리하는 라이브러리를 사용하였는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#라이브러리를-안-쓰고-직접-구현하는-것도-좋은데-그럼-일정에-대한-문제가-생기지-않는가-일정은-어떻게-잡았나"><span class="toc-nav-text">라이브러리를 안 쓰고 직접 구현하는 것도 좋은데 그럼 일정에 대한 문제가 생기지 않는가 일정은 어떻게 잡았나</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#inBitmap-은-사용하지-않았는가-비트맵을-캐시하는-과정이-inBitmap-을-사용하면-해결될거-같다는-식으로-말함"><span class="toc-nav-text">inBitmap 은 사용하지 않았는가 (비트맵을 캐시하는 과정이 inBitmap 을 사용하면 해결될거 같다는 식으로 말함)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#안드로이드에서-Task-와-Process-의-차이점"><span class="toc-nav-text">안드로이드에서 Task 와 Process 의 차이점</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#A-라는-앱에서-B-앱의-액티비티을-부를-수-있는데-그때는-하나의-태스크인가-별도의-태스크인가"><span class="toc-nav-text">A 라는 앱에서 B 앱의 액티비티을 부를 수 있는데 그때는 하나의 태스크인가 별도의 태스크인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#네트워크-통신에서-사용했던-라이브러리는-무엇이-있는가-레트로핏-사용햇다고-하니-랩퍼형태의-클래스이지-통신을-하는-라이브러리는-아니라고-함"><span class="toc-nav-text">네트워크 통신에서 사용했던 라이브러리는 무엇이 있는가 (레트로핏 사용햇다고 하니 랩퍼형태의 클래스이지 통신을 하는 라이브러리는 아니라고 함)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Okhttp3-사용했으면-인터셉터가-있는데-무엇인가"><span class="toc-nav-text">Okhttp3 사용했으면 인터셉터가 있는데 무엇인가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Okhttp-에서-네트워크-옵션을-설정하는-부분을-보면-어플리케이션-인터셉터가-있고-네트워크-인터셉터가-있는데-이것에-대해-아는가"><span class="toc-nav-text">Okhttp 에서 네트워크 옵션을 설정하는 부분을 보면 어플리케이션 인터셉터가 있고 네트워크 인터셉터가 있는데 이것에 대해 아는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ScrollView-를-직접-만든다면-이벤트-처리부터-스크롤-효과까지-어떻게-구현할-것인가-또한-fling-은-어떻게-구현할-것인가-터치-이벤트를-받으면-이것이-스크롤인지를-판단하는-구현이-들어갈-것이고-제스쳐까지-만든-후-화면에-스크롤-효과를-구현해야-될-것이다-이것을-어떻게-구현할-것인지-설명해보라함"><span class="toc-nav-text">ScrollView 를 직접 만든다면 이벤트 처리부터 스크롤 효과까지 어떻게 구현할 것인가, 또한 fling 은 어떻게 구현할 것인가, (터치 이벤트를 받으면 이것이 스크롤인지를 판단하는 구현이 들어갈 것이고, 제스쳐까지 만든 후 화면에 스크롤 효과를 구현해야 될 것이다 이것을 어떻게 구현할 것인지 설명해보라함)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#잠금화면을-만들때-액티비티를-만드는-경우도-있지만-윈도우에-직접-그리는-방식도-있던데-그것에-대해-아는-것이-있는가"><span class="toc-nav-text">잠금화면을 만들때 액티비티를 만드는 경우도 있지만 윈도우에 직접 그리는 방식도 있던데 그것에 대해 아는 것이 있는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#메모리-관련해서-트러블-슈팅이-많은-것-같은데-어떤-방식으로-해결했는지-말해보아라-메모리가-부족하다는-것을-어떤-방식으로-확인하고-측정을-어떻게-했으며-죽지-않을때까지-해본-건지-말해보아라-정확한-원인-분석을-해봣는가를-원했음-프로파일링이나-힙덤프를-까보았는지를-궁금해함"><span class="toc-nav-text">메모리 관련해서 트러블 슈팅이 많은 것 같은데 어떤 방식으로 해결했는지 말해보아라, 메모리가 부족하다는 것을 어떤 방식으로 확인하고 측정을 어떻게 했으며 죽지 않을때까지 해본 건지 말해보아라(정확한 원인 분석을 해봣는가를 원했음, 프로파일링이나 힙덤프를 까보았는지를 궁금해함)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MVP-와-MVVM-에-대해-가장-큰-차이에-대해-간단히-설명"><span class="toc-nav-text">MVP 와 MVVM 에 대해 가장 큰 차이에 대해 간단히 설명</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#안드로이드는-직렬화-중-Parcelable-를-사용하는데-Serializable-과의-차이와-왜-안드로이드는-Parcelable을-사용하는가"><span class="toc-nav-text">안드로이드는 직렬화 중 Parcelable 를 사용하는데 Serializable 과의 차이와 왜 안드로이드는 Parcelable을 사용하는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#안드로이드의-자이고트와-루퍼에-대해-설명해보아라"><span class="toc-nav-text">안드로이드의 자이고트와 루퍼에 대해 설명해보아라</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SparseArray-를-설명해보아라-속도가-더-빠르다는-이유로-사용하는데-왜-더-빠르고-더-빠른-상황은-어떤-상황이-있겠는가"><span class="toc-nav-text">SparseArray 를 설명해보아라, 속도가 더 빠르다는 이유로 사용하는데 왜 더 빠르고, 더 빠른 상황은 어떤 상황이 있겠는가</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#어떤-앱에서-다른-부분은-다-괜찮은데-화면에-랜더링이-느리다는-문제가-있다-이것을-어떻게-해결할-것인가-랜더링에-문제가-생기면-view-hierarchy-에-과도한-뷰가-있지-않은지-확인한다-flexboxlayout-이나-constraintlayout-을-사용하여-뷰-최적화를-고려하거나-불필요한-오버드로우가-발생하지-않앗는지-검토해야된다고-하심"><span class="toc-nav-text">어떤 앱에서 다른 부분은 다 괜찮은데 화면에 랜더링이 느리다는 문제가 있다. 이것을 어떻게 해결할 것인가(랜더링에 문제가 생기면 view hierarchy 에 과도한 뷰가 있지 않은지 확인한다. flexboxlayout 이나 constraintlayout 을 사용하여 뷰 최적화를 고려하거나 불필요한 오버드로우가 발생하지 않앗는지 검토해야된다고 하심)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ConstraintLayout"><span class="toc-nav-text">ConstraintLayout</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#FlexBoxLayout"><span class="toc-nav-text">FlexBoxLayout</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Queue-2개로-Stack-구현"><span class="toc-nav-text">Queue 2개로 Stack 구현</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#임시변수-안-쓰고-값-바꾸기"><span class="toc-nav-text">임시변수 안 쓰고 값 바꾸기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#병합정렬-구현하기-Stack-써서-구현해보기"><span class="toc-nav-text">병합정렬 구현하기, Stack 써서 구현해보기</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#퀵-정렬-구현하기-Stack-써서-구현하기"><span class="toc-nav-text">퀵 정렬 구현하기, Stack 써서 구현하기</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://hyeonu1258.github.io/2018/04/17/안드로이드 면접3/';
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "hyeonu1258";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "",
+        owner: "hyeonu1258",
+        repo: "hyeonu1258.github.io",
+        oauth: {
+          client_id: "058b1d67f791e1b7bb00",
+          client_secret: "fbfb73021f7786a1b20ae6d48e54af20534d8c4e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
